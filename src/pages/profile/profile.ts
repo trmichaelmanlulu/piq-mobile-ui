@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { ProfilePopoverPage } from '../_popovers/profile-popover/profile-popover';
 
 /**
  * Generated class for the ProfilePage page.
@@ -14,12 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  profileSegment = 'recent-updates';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  }
+
+  presentPopover(myEvent) {
+    const popover = this.popoverCtrl.create(ProfilePopoverPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

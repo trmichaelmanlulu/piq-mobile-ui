@@ -36,13 +36,69 @@ button[ion-button].btn {
 // Searchbar
 ion-searchbar {
 	input {
+		background: rgba(255, 255, 255, 0.7) !important;
+		border-radius: 3rem !important;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+	
+		&::placeholder {
+			color: #5b5b5b !important;
+			opacity: 1; /* Firefox */
+		}
+	}
+}
+// Segments
+ion-segment {
+	transform: scale(0.9);
+
+	ion-segment-button {
+		padding: 0.1rem 0.75rem;
+		color: #3579ee;
+		border: 1px solid #fff !important;
+		border-radius: 2.5rem;
+		margin: 0 0.5rem !important;
+		background: #fff !important;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+	
+		&.segment-activated {
+			border-color: #368aff !important;
+			background: #368aff !important;
+			color: #fff !important;
+		}
+	}
+}
+// Popovers
+ion-popover {
+	ion-content {
+        border-radius: 1rem;
+
+        ion-list {
+            margin: 5px 0 !important;
+        }
+    }
+}
+// Page title
+// Page title
+.page-title-container {
+	.ptc-left {
+		padding: 0 1rem;
+
+		svg {
+			transform: scale(0.7);
+		}
+		p {
+			font-size: 1.4rem;
+			color: #555;
+		}
+	}
+	button {
+		transform: scale(0.7);
+		right: -1rem;
 	}
 }
 // Card
 ion-card {
 	margin-bottom: 1.5rem !important;
-	border-radius: 1rem !important;
+	border-radius: 0.75rem !important;
 	box-shadow: 0 1px 2px rgba(167,167,167, .5) !important;
 }
 

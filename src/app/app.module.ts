@@ -1,3 +1,4 @@
+
 // Core
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -28,8 +29,14 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { ProfilePage } from '../pages/profile/profile';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { SettingsPage } from '../pages/settings/settings';
+
+// Pages (Modals)
 import { MyPropertiesModalPage } from '../pages/_modals/my-properties-modal/my-properties-modal';
 import { NewsfeedModalPage } from '../pages/_modals/newsfeed-modal/newsfeed-modal';
+
+// Pages (Popovers)
+import { NotificationPopoverPage } from '../pages/_popovers/notification-popover/notification-popover';
+import { ProfilePopoverPage } from '../pages/_popovers/profile-popover/profile-popover';
 
 // Directives
 import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
@@ -51,8 +58,12 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     ProfilePage,
     NotificationsPage,
     SettingsPage,
+
     MyPropertiesModalPage,
     NewsfeedModalPage,
+
+    NotificationPopoverPage,
+    ProfilePopoverPage,
 
     ParallaxHeaderDirective
   ],
@@ -78,8 +89,12 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     ProfilePage,
     NotificationsPage,
     SettingsPage,
+
     MyPropertiesModalPage,
-    NewsfeedModalPage
+    NewsfeedModalPage,
+    
+    NotificationPopoverPage,
+    ProfilePopoverPage,
   ],
   providers: [
     StatusBar,

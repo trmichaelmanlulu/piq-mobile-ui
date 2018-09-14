@@ -1,8 +1,26 @@
 page-my-properties-modal {
     ion-navbar {
-        button {
-            ion-icon {
-                transform: scale(1.35);
+        position: relative;
+        padding: 1rem !important;
+        
+        ion-title {
+            text-align: center;
+            padding: 7px;
+
+            .toolbar-title {
+                font-size: 1.7rem;
+            }
+        }
+        ion-buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+            button {
+                ion-icon {
+                    transform: scale(1.2);
+                }
             }
         }
     }

@@ -59,7 +59,7 @@
 	</div>
 </div>
 
-<ion-scroll scrollX="true" direction="x">
+<div class="recent-posts">
 	<!-- Card layout (Repair) -->
 	<app-card-repair [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-repair>
 
@@ -71,5 +71,4 @@
 
 	<!-- Card layout (Payment IP) -->
 	<app-card-payment [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-payment>
-		
-</ion-scroll>
+</div>

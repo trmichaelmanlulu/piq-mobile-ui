@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
- * Generated class for the NotificationPopoverPage page.
+ * Generated class for the ProfilePopoverPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,10 +10,10 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 @IonicPage()
 @Component({
-  selector: 'page-notification-popover',
-  templateUrl: 'notification-popover.html',
+  selector: 'page-profile-popover',
+  templateUrl: 'profile-popover.html',
 })
-export class NotificationPopoverPage {
+export class ProfilePopoverPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
@@ -24,5 +24,4 @@ export class NotificationPopoverPage {
   dismissPopover() {
     this.viewCtrl.dismiss();
   }
-
 }

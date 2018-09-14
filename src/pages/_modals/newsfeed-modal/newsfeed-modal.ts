@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController, Slides } from 'ionic-angular';
 
 /**
- * Generated class for the NewsfeedItemPage page.
+ * Generated class for the NewsfeedModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.

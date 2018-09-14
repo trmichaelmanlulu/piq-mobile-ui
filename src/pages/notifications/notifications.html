@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>Notifications</ion-title>
-    <ion-buttons end icon-right>
+    <ion-buttons end icon-right (click)="presentPopover($event)">
       <button ion-button clear>
         <ion-icon name="more"></ion-icon>
       </button>
@@ -101,7 +101,7 @@
       </div>
     </ion-item>
     <!-- Levy Notice Issued-->
-    <ion-item class="hn-items active dropdown-item d-flex no-hover _card-line-bottom">
+    <ion-item class="hn-items dropdown-item d-flex no-hover _card-line-bottom">
       <div class="hni-img d-flex align-items-center mr-2">
         <img src="assets/imgs/building-background.jpeg" alt="Hornsby Building" />
       </div>

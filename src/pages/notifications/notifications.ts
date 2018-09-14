@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { NotificationPopoverPage } from '../_popovers/notification-popover/notification-popover';
 
 /**
  * Generated class for the NotificationsPage page.
@@ -15,11 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NotificationsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotificationsPage');
+  }
+
+  presentPopover(myEvent) {
+    const popover = this.popoverCtrl.create(NotificationPopoverPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

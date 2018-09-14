@@ -1,4 +1,28 @@
 page-notifications {
+    ion-navbar {
+        position: relative;
+        padding: 1rem !important;
+        
+        ion-title {
+            text-align: center;
+
+            .toolbar-title {
+                font-size: 1.7rem;
+            }
+        }
+        ion-buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1.2rem;
+
+            button {
+                ion-icon {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
     ion-list {
         .hn-items {
             border-radius: 4px;
@@ -38,7 +62,7 @@ page-notifications {
                     }
                     .notif-name {
                         font-size: 1.35rem;
-                        color: #316bd0 !important;
+                        color: #587ab5 !important;
                     }
                     .notif-info {
                         font-size: 1.6rem;

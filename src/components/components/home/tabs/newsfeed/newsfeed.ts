@@ -1,6 +1,6 @@
 import { ModalController } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { NewsfeedItemPage } from './../../../../../pages/_modals/newsfeed-item/newsfeed-item';
+import { NewsfeedModalPage } from './../../../../../pages/_modals/newsfeed-modal/newsfeed-modal';
 
 /**
  * Generated class for the NewsfeedComponent component.
@@ -19,7 +19,7 @@ export class NewsfeedComponent {
   }
 
   presentNewsfeedItemModal() {
-    let profileModal = this.modalCtrl.create(NewsfeedItemPage);
+    let profileModal = this.modalCtrl.create(NewsfeedModalPage);
     profileModal.present();
   }
 

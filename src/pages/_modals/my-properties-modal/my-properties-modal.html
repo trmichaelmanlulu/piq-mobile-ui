@@ -6,12 +6,19 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-searchbar></ion-searchbar>
-    <ion-buttons end>
-      <button padding ion-button (click)="dismissModalProperties()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-row>
+      <ion-title>
+        My properties
+        <ion-buttons end>
+          <button padding ion-button (click)="dismissModalProperties()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-title>
+    </ion-row>
+    <ion-row class="mt-1">
+        <ion-searchbar></ion-searchbar>
+    </ion-row>
   </ion-navbar>
 </ion-header>
 

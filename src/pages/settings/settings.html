@@ -1,11 +1,54 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title class="navbar-title">
-      <strong>Profile</strong>
+      <strong>Settings</strong>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="animated fadeIn common-bg">
-  <h1>Settings Page</h1>
+  <ion-list>
+    <ion-list-header>Notifications</ion-list-header>
+    <ion-item class="d-flex p-1">
+      <ion-label>Received messages</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="d-flex p-1">
+      <ion-label>Replied messages</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="d-flex p-1">
+      <ion-label>Levy notice due</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="d-flex p-1">
+      <ion-label>Levy notice issued</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="d-flex p-1">
+      <ion-label>Upcoming meeting</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="d-flex p-1">
+      <ion-label>Activity on pinned posts</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="d-flex pt-4 flex-column">
+      <p class="mb-3 px-3 _ts-darker font-weight-bold">Frequency</p>
+      <div class="select px-2">
+        <select>
+          <option value="0" selected="selected">Instantly</option>
+          <option value="1">Every 30 minutes</option>
+          <option value="2">Every 1 hour</option>
+          <option value="3">Every 2 hours</option>
+          <option value="4">Every 6 hours</option>
+          <option value="5">Every 12 hours</option>
+          <option value="6">Daily</option>
+          <option value="7">Weekly</option>
+        </select>
+        <div class="select__arrow"></div>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

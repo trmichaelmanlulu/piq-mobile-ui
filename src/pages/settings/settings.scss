@@ -1,3 +1,26 @@
 page-settings {
+    ion-navbar {
+        position: relative;
+        padding: 1rem !important;
+        
+        ion-title {
+            text-align: center;
 
+            .toolbar-title {
+                font-size: 1.7rem;
+            }
+        }
+        ion-buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1.2rem;
+
+            button {
+                ion-icon {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
 }
