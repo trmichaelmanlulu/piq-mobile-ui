@@ -16,84 +16,27 @@
 // automatically applied to the <body> element in the app.
 
 
+// Imports ----------------------------------------------------------------------------------------------------
 
+// Custom classes
+@import '../theme/classes/global';
+@import '../theme/classes/flexbox';
+@import '../theme/classes/seperator';
+@import '../theme/classes/sizing';
+@import '../theme/classes/spacing';
 
+// Layout
+@import '../theme/layout/shapes';
 
-// Reusable custom classes
-.hidden {
-	display: none !important;
-}
+// Base
+@import '../theme/base/global';
+@import '../theme/base/component';
+@import '../theme/base/platforms/md';
+@import '../theme/base/platforms/ios';
 
-// Side menu
-.sidemenu {
-	position: relative;
-	
-	.sidemenu-header {
-		position: relative;
-		height: 25vh;
-		background: url('https://devpiqstrata-uploads.tooltwist-project.com/dev/strata/1/building/70/images/1535093015606/building-large.jpg');
-		background-size: cover;
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background: linear-gradient(to left, rgba(10, 54, 92, 0.95), rgba(13, 29, 56, 0.90));
-			opacity: .95;
-		}
-		.sidemenu-close {
-			background: rgba(0, 0, 0, 0.28);
-			position: absolute;
-			border-radius: 50%;
-			width: 35px;
-			height: 35px;
-			right: 10px;
-			top: 10px;
-			z-index: 1;
-		}
-		.header-property {
-			position: absolute;
-			display: flex;
-			flex-flow: column nowrap;
-			bottom: 0;
-			width: 100%;
-			z-index: 1;
-			padding: 1rem;
-
-			.property-image {
-				position: relative;
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-			}
-			.property-details {
-				.property-name {
-					color: #fff;
-				}
-			}
-		}
-	}
-}
+// Icons
+@import '../theme/icons/svg';
 
 // Animations
-.animated {
-	animation-duration: 1s;
-	animation-fill-mode: both;
-}
-.fadeIn {
-	animation-name: fadeIn;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
+@import '../theme/animations/global';
+@import '../theme/animations/component';

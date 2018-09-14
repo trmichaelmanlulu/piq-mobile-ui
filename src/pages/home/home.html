@@ -1,7 +1,47 @@
 <ion-header>
-  <app-navbar [title]="'Home'"></app-navbar>
+	<ion-navbar color="primary">
+		<button class="navbar-menu" ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title class="navbar-title">
+			<strong>Home</strong>
+		</ion-title>
+		<ion-buttons end>
+			<button class="navbar-properties" ion-button tappable (click)="presentPropertiesModal()">
+			<img src="assets/imgs/building-background.jpeg" alt="Selected property">
+			</button>
+		</ion-buttons>
+	</ion-navbar>
 </ion-header>
-
-<ion-content padding class="animated fadeIn common-bg">
-  <h1>Home Page</h1>
+<ion-content>
+	<!-- Header -->
+	<div class="blue-header"></div>
+	<ion-card class="header-building-container">
+		<div class="card-image"><img src="assets/imgs/building-background.jpeg"></div>
+		<ion-card-content>
+				<ion-card-title>Artarmon Building</ion-card-title>
+				<p>118 Artarmon Rd. Artarmon NSW. 2064</p>
+		</ion-card-content>
+	</ion-card>
+	<!-- Body -->
+	<div class="main-content">
+		<div class="segment-container">
+			<ion-segment [(ngModel)]="homeSegment">
+				<ion-segment-button value="newsfeed">Newsfeed</ion-segment-button>
+				<ion-segment-button value="financial">Financial</ion-segment-button>
+				<ion-segment-button value="strata">Strata</ion-segment-button>
+			</ion-segment>
+		</div>
+		<div class="segment-content" [ngSwitch]="homeSegment">
+			<div class="newsfeed-segment" *ngSwitchCase="'newsfeed'">
+				<app-newsfeed></app-newsfeed>
+			</div>
+			<div class="newsfeed-segment" *ngSwitchCase="'financial'">
+				<app-financial></app-financial>
+			</div>
+			<div class="newsfeed-segment" *ngSwitchCase="'strata'">
+				<app-strata></app-strata>
+			</div>
+		</div>
+	</div>
 </ion-content>

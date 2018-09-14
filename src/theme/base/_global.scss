@@ -1,0 +1,131 @@
+
+// Links
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 1.7rem;
+	color: #5d5d5d !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 1.7rem !important;
+	color: #444444 !important;
+	font-weight: 500 !important;
+}
+input, textarea {
+	color: #5d5d5d !important;
+}
+ion-item,
+ion-label {
+	font-size: 1.4rem;
+	color: #5d5d5d !important;
+}
+// Button
+button[ion-button].btn {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 2rem !important;
+	padding: 1.15rem 2.5rem !important;
+	height: unset !important;
+
+	.button-inner {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+}
+// Searchbar
+ion-searchbar {
+	input {
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+	}
+}
+// Card
+ion-card {
+	margin-bottom: 1.5rem !important;
+	border-radius: 1rem !important;
+	box-shadow: 0 1px 2px rgba(167,167,167, .5) !important;
+}
+
+.card-layout {
+	text-align: left;
+
+	// Shared layout
+	.cl-header {
+		position: relative;
+
+		.cl-title {
+			font-size: 1.6rem;
+		}
+		.cl-type {
+			color: #575757;
+
+			&::before {
+				content: '·';
+				position: relative;
+				margin: 0 5px;
+				color: #b3b3b3;
+			}
+		}
+		.cl-subtitle {
+			color: #575757;
+			font-size: 1.3rem;
+		}
+		.cl-pinned {
+			transform: scale(0.9);
+			position: absolute;
+			right: 0;
+		}
+	}
+	.cl-body {
+		position: relative;
+
+		h4 {
+			white-space: normal;
+		}
+		img {
+			width: 17px;
+		}
+		p {
+			white-space: normal;
+		}
+	}
+	.cl-footer {
+		.cl-comment-input {
+			border-radius: 5px;
+			overflow: hidden;
+			border: 1px solid #dadada;
+
+			input {
+				padding: 0.5rem 1rem;
+				border: none !important;
+			}
+			
+			button {
+				background: transparent;
+				padding: 0.5rem 1.5rem !important;
+			}
+		}
+	}
+	&.cl-repair {
+		.cl-body {
+			p {
+				margin-bottom: 2rem !important;
+			}
+		}
+	}
+	&.cl-manager-post {
+		.cl-header {
+			.cl-title {
+				max-width: 120px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+		.cl-body {
+			p {
+				margin-bottom: 2rem !important;
+			}
+		}
+	}
+}

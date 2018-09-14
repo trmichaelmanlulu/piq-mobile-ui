@@ -1,0 +1,59 @@
+app-newsfeed {
+    // Levy due
+    .levy-due-card {
+        .ldc-top {
+            padding: 0 3rem 0 0;
+
+            .card-icon-img {
+                background: #fff;
+            }
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 0 !important;
+        }
+    }
+    ion-scroll {
+        min-height: 280px; 
+        height: auto;
+
+        .scroll-content {
+            padding: 0px !important;
+
+            .scroll-zoom-wrapper {
+                white-space: nowrap;
+
+                *:last-child {
+                    ion-card {
+                        margin-right: 1rem !important;
+                    }
+                }
+
+                ion-card {
+                    width: 85% !important;
+                    display: inline-block;
+                    margin-left: 1rem !important;
+                    
+                    
+                    .cl-body {
+                        height: 145px;
+                        overflow: hidden;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 50px;
+                            background: linear-gradient(to top, #fff, transparent);
+                        }
+                    }
+                    .cl-footer {
+                        display: none;
+                    }
+                }
+            }
+        }    
+    }
+}

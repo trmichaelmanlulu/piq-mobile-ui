@@ -1,18 +1,5 @@
 <ion-menu [content]="content">
-	<div class="sidemenu">
-		<div class="sidemenu-header">
-			<button class="sidemenu-close" ion-button tappable>
-				<ion-icon name="close"></ion-icon>
-			</button>
-
-			<div class="header-property">
-				<img src="https://devpiqstrata-uploads.tooltwist-project.com/dev/strata/1/building/70/images/1535093015606/building-large.jpg" alt="" class="property-image">
-				<div class="property-details">
-					<h4 class="property-name">Building 689</h4>
-				</div>
-			</div>
-		</div>
-	</div>
+	<app-sidemenu></app-sidemenu>
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content></ion-nav>

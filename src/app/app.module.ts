@@ -1,12 +1,20 @@
+// Core
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
+// Ionic native
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Keyboard } from '@ionic-native/keyboard';
 
+// Modules
+import { ComponentsModule } from './../components/components.module';
+
+// Components
 import { MyApp } from './app.component';
 
+// Pages
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -20,12 +28,16 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { ProfilePage } from '../pages/profile/profile';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { SettingsPage } from '../pages/settings/settings';
+import { MyPropertiesModalPage } from '../pages/_modals/my-properties-modal/my-properties-modal';
+import { NewsfeedModalPage } from '../pages/_modals/newsfeed-modal/newsfeed-modal';
 
-import { ComponentsModule } from './../components/components.module';
+// Directives
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 
 @NgModule({
   declarations: [
     MyApp,
+
     TabsPage,
     HomePage,
     LoginPage,
@@ -38,7 +50,11 @@ import { ComponentsModule } from './../components/components.module';
     FaqsPage,
     ProfilePage,
     NotificationsPage,
-    SettingsPage
+    SettingsPage,
+    MyPropertiesModalPage,
+    NewsfeedModalPage,
+
+    ParallaxHeaderDirective
   ],
   imports: [
     BrowserModule,
@@ -48,6 +64,7 @@ import { ComponentsModule } from './../components/components.module';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+
     TabsPage,
     HomePage,
     LoginPage,
@@ -60,7 +77,9 @@ import { ComponentsModule } from './../components/components.module';
     FaqsPage,
     ProfilePage,
     NotificationsPage,
-    SettingsPage
+    SettingsPage,
+    MyPropertiesModalPage,
+    NewsfeedModalPage
   ],
   providers: [
     StatusBar,

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the AddPropertyPage page.
+ * Generated class for the BuildingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-property',
-  templateUrl: 'add-property.html',
+  selector: 'page-building',
+  templateUrl: 'building.html',
 })
-export class AddPropertyPage {
+export class BuildingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddPropertyPage');
+    console.log('ionViewDidLoad BuildingPage');
   }
 
 }
