@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
-import { MyPropertiesModalPage } from '../../pages/_modals/my-properties-modal/my-properties-modal';
+import { NavController, App } from 'ionic-angular';
+import { BuildingPage } from '../building/building';
 
 @Component({
   selector: 'page-home',
@@ -9,15 +9,14 @@ import { MyPropertiesModalPage } from '../../pages/_modals/my-properties-modal/m
 export class HomePage {
   homeSegment = 'newsfeed';
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public appCtrl: App) {
   }
 
   ionViewDidLoad() {
   }
 
-  presentPropertiesModal() {
-    let profileModal = this.modalCtrl.create(MyPropertiesModalPage);
-    profileModal.present();
+  goToBuildingPage() {
+    this.appCtrl.getActiveNav().setRoot(BuildingPage);
   }
 
 }

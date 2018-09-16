@@ -29,6 +29,7 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { ProfilePage } from '../pages/profile/profile';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { SettingsPage } from '../pages/settings/settings';
+import { BuildingPage } from '../pages/building/building';
 
 // Pages (Modals)
 import { MyPropertiesModalPage } from '../pages/_modals/my-properties-modal/my-properties-modal';
@@ -58,6 +59,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     ProfilePage,
     NotificationsPage,
     SettingsPage,
+    BuildingPage,
 
     MyPropertiesModalPage,
     NewsfeedModalPage,
@@ -89,6 +91,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     ProfilePage,
     NotificationsPage,
     SettingsPage,
+    BuildingPage,
 
     MyPropertiesModalPage,
     NewsfeedModalPage,

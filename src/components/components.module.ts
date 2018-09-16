@@ -4,6 +4,7 @@ import { IonicModule } from 'ionic-angular';
 
 // Shared
 import { SidemenuComponent } from './shared/sidemenu/sidemenu';
+import { NavbarComponent } from './shared/navbar/navbar';
 
 import { MeetingComponent } from './shared/cards/meeting/meeting';
 import { RepairComponent } from './shared/cards/repair/repair';
@@ -33,6 +34,7 @@ import { PropertyGalleryComponent } from './components/profile/cards/property-ga
 		PaymentComponent,
 		SidemenuComponent,
     	PropertyGalleryComponent,
+    	NavbarComponent,
 	],
 	imports: [
 		CommonModule,
@@ -49,6 +51,7 @@ import { PropertyGalleryComponent } from './components/profile/cards/property-ga
 		PaymentComponent,
 		SidemenuComponent,
     	PropertyGalleryComponent,
+    	NavbarComponent,
 	]
 })
 export class ComponentsModule {}

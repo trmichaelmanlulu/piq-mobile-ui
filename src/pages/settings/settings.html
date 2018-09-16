@@ -6,9 +6,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="animated fadeIn common-bg">
-  <ion-list>
-    <ion-list-header>Notifications</ion-list-header>
+<ion-content>
+  
+  <!-- Notifications -->
+  <ion-item-group>
+    <ion-item-divider>Notifications</ion-item-divider>
     <ion-item class="d-flex p-1">
       <ion-label>Received messages</ion-label>
       <ion-checkbox color="primary" checked="true"></ion-checkbox>
@@ -33,22 +35,38 @@
       <ion-label>Activity on pinned posts</ion-label>
       <ion-checkbox color="primary" checked="true"></ion-checkbox>
     </ion-item>
-
-    <ion-item class="d-flex pt-4 flex-column">
-      <p class="mb-3 px-3 _ts-darker font-weight-bold">Frequency</p>
-      <div class="select px-2">
-        <select>
-          <option value="0" selected="selected">Instantly</option>
-          <option value="1">Every 30 minutes</option>
-          <option value="2">Every 1 hour</option>
-          <option value="3">Every 2 hours</option>
-          <option value="4">Every 6 hours</option>
-          <option value="5">Every 12 hours</option>
-          <option value="6">Daily</option>
-          <option value="7">Weekly</option>
-        </select>
-        <div class="select__arrow"></div>
-      </div>
+    <ion-item>
+      <ion-select [(ngModel)]="frequency">
+        <ion-option value="instantly" selected="true">Instantly</ion-option>
+        <ion-option value="30-mins">Every 30 minutes</ion-option>
+        <ion-option value="1-hour">Every 1 hour</ion-option>
+        <ion-option value="2-hours">Every 2 hours</ion-option>
+        <ion-option value="6-hours">Every 6 hours</ion-option>
+        <ion-option value="12-hours">Every 12 hours</ion-option>
+        <ion-option value="daily">Daily</ion-option>
+        <ion-option value="weekly">Weekly</ion-option>
+      </ion-select>
     </ion-item>
-  </ion-list>
+  </ion-item-group>
+  <!-- Default property -->
+  <ion-item-group>
+    <ion-item-divider>Default Property</ion-item-divider>
+    <ion-item>
+      <ion-select [(ngModel)]="defaultProperty">
+        <ion-option value="last-viewed">Last property viewed</ion-option>
+        <ion-option value="hornsby-building" selected="true">Hornsby Building</ion-option>
+        <ion-option value="st-leonards-residence">St Leonards Residence</ion-option>
+        <ion-option value="artarmon-building">Artarmon Building</ion-option>
+        <ion-option value="newtown-complex">Newtown Complex</ion-option>
+        <ion-option value="glebe-building">Glebe Building</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-item-group>
+  <!-- Change password -->
+  <ion-item-group>
+    <ion-item-divider>Change password</ion-item-divider>
+    <ion-item>
+      <button ion-button outline>Change password</button>
+    </ion-item>
+  </ion-item-group>
 </ion-content>
