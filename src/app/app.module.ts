@@ -34,6 +34,10 @@ import { BuildingPage } from '../pages/building/building';
 // Pages (Modals)
 import { MyPropertiesModalPage } from '../pages/_modals/my-properties-modal/my-properties-modal';
 import { NewsfeedModalPage } from '../pages/_modals/newsfeed-modal/newsfeed-modal';
+import { NotificationsModalPage } from '../pages/_modals/notifications-modal/notifications-modal';
+import { OpenItemsModalPage } from '../pages/_modals/open-items-modal/open-items-modal';
+import { FaqsModalPage } from '../pages/_modals/faqs-modal/faqs-modal';
+import { DocumentModalPage } from '../pages/_modals/document-modal/document-modal';
 
 // Pages (Popovers)
 import { NotificationPopoverPage } from '../pages/_popovers/notification-popover/notification-popover';
@@ -63,11 +67,15 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 
     MyPropertiesModalPage,
     NewsfeedModalPage,
+    NotificationsModalPage,
+    OpenItemsModalPage,
+    FaqsModalPage,
+    DocumentModalPage,
 
     NotificationPopoverPage,
     ProfilePopoverPage,
 
-    ParallaxHeaderDirective
+    ParallaxHeaderDirective,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +103,10 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 
     MyPropertiesModalPage,
     NewsfeedModalPage,
+    NotificationsModalPage,
+    OpenItemsModalPage,
+    FaqsModalPage,
+    DocumentModalPage,
     
     NotificationPopoverPage,
     ProfilePopoverPage,

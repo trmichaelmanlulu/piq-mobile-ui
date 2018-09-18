@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { OpenItemsModalPage } from './../_modals/open-items-modal/open-items-modal';
 
 /**
  * Generated class for the OpenItemsPage page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OpenItemsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OpenItemsPage');
+  }
+
+  presentOpenItemsModal() {
+    let openItemsModal = this.modalCtrl.create(OpenItemsModalPage);
+    openItemsModal.present();
   }
 
 }

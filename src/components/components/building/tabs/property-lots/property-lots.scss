@@ -1,0 +1,12 @@
+app-property-lots {
+    table tr td:nth-child(2) {
+        width: 110px;
+    }
+    ion-card {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem !important;
+
+        button {
+            text-transform: initial !important;
+        }
+    }
+}

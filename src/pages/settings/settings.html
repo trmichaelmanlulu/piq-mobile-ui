@@ -9,33 +9,36 @@
 <ion-content>
   
   <!-- Notifications -->
-  <ion-item-group>
-    <ion-item-divider>Notifications</ion-item-divider>
-    <ion-item class="d-flex p-1">
+  <ion-list>
+    <ion-list-header class="m-0">
+      <strong>Notifications</strong>
+    </ion-list-header>
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Received messages</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="true"></ion-toggle>
     </ion-item>
-    <ion-item class="d-flex p-1">
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Replied messages</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="false"></ion-toggle>
     </ion-item>
-    <ion-item class="d-flex p-1">
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Levy notice due</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="true"></ion-toggle>
     </ion-item>
-    <ion-item class="d-flex p-1">
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Levy notice issued</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="true"></ion-toggle>
     </ion-item>
-    <ion-item class="d-flex p-1">
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Upcoming meeting</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="false"></ion-toggle>
     </ion-item>
-    <ion-item class="d-flex p-1">
+    <ion-item class="d-flex py-1 px-3">
       <ion-label>Activity on pinned posts</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      <ion-toggle checked="false"></ion-toggle>
     </ion-item>
-    <ion-item>
+    <ion-item class="d-flex py-1 px-3">
+      <ion-label>Frequency</ion-label>
       <ion-select [(ngModel)]="frequency">
         <ion-option value="instantly" selected="true">Instantly</ion-option>
         <ion-option value="30-mins">Every 30 minutes</ion-option>
@@ -47,11 +50,15 @@
         <ion-option value="weekly">Weekly</ion-option>
       </ion-select>
     </ion-item>
-  </ion-item-group>
+  </ion-list>
+
   <!-- Default property -->
-  <ion-item-group>
-    <ion-item-divider>Default Property</ion-item-divider>
-    <ion-item>
+  <ion-list>
+    <ion-list-header class="m-0">
+      <strong>Properties</strong>
+    </ion-list-header>
+    <ion-item class="d-flex py-1 px-3">
+      <ion-label>Default property</ion-label>
       <ion-select [(ngModel)]="defaultProperty">
         <ion-option value="last-viewed">Last property viewed</ion-option>
         <ion-option value="hornsby-building" selected="true">Hornsby Building</ion-option>
@@ -61,12 +68,14 @@
         <ion-option value="glebe-building">Glebe Building</ion-option>
       </ion-select>
     </ion-item>
-  </ion-item-group>
+  </ion-list>
+
   <!-- Change password -->
-  <ion-item-group>
-    <ion-item-divider>Change password</ion-item-divider>
-    <ion-item>
-      <button ion-button outline>Change password</button>
+  <ion-list>
+    <ion-list-header class="m-0">
+      <strong>Password</strong></ion-list-header>
+    <ion-item class="d-flex py-1 px-3">
+      <button ion-button outline block>Change password</button>
     </ion-item>
-  </ion-item-group>
+  </ion-list>
 </ion-content>

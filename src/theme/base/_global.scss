@@ -20,12 +20,28 @@ ion-label {
 	font-size: 1.4rem;
 	color: #5d5d5d !important;
 }
+// Table
+table {
+	td {
+		padding: 1rem 0;
+		color: #5d5d5d !important;
+
+		strong {
+			font-weight: 500 !important;
+		}
+	}
+}
 // Button
+ion-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 button[ion-button].btn {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
     border-radius: 2rem !important;
-	padding: 1.15rem 2.5rem !important;
-	height: unset !important;
+	padding: 10px 2.5rem !important;
+	height: 35px !important;
 
 	.button-inner {
 		display: flex !important;
@@ -76,7 +92,14 @@ ion-popover {
         }
     }
 }
-// Page title
+// Ion title
+ion-title {
+	text-align: center;
+
+	.toolbar-title {
+		font-size: 1.7rem;
+	}
+}
 // Page title
 .page-title-container {
 	.ptc-left {

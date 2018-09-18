@@ -21,7 +21,6 @@ export class NewsfeedModalPage {
   }
 
   ionViewDidEnter() {
-    this.presentNavigateInstructionToast();
   }
 
   goToSlide() {
@@ -33,15 +32,14 @@ export class NewsfeedModalPage {
     console.log('Current index is', currentIndex);
   }
 
-  dismissNewsfeedItem() {
-    this.viewCtrl.dismiss();
-  }
-
   presentNavigateInstructionToast() {
     const toast = this.toastCtrl.create({
       message: 'Swipe left or right to view other pinned posts.',
       duration: 3000
     });
     toast.present();
+  }
+  dismissModal() {
+      this.viewCtrl.dismiss();
   }
 }

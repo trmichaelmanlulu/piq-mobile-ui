@@ -21,7 +21,7 @@ export class MyPropertiesModalPage {
   ionViewDidLoad() {
   }
 
-  dismissModalProperties() {
+  dismissModal() {
       this.viewCtrl.dismiss();
   }
 }

@@ -1,0 +1,12 @@
+page-notifications-modal {
+    ion-navbar  {
+        ion-buttons {
+            position: absolute;
+        }
+    }
+    ion-content {
+        ion-card {
+            box-shadow: none !important;
+        }
+    }
+}

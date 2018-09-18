@@ -1,5 +1,9 @@
 app-strata {
+    ion-card {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem !important;
+    }
     ion-card.manager-info {
+
         .sbd-owner {
             display: flex;
             flex-flow: row wrap;
@@ -63,7 +67,6 @@ app-strata {
             align-items: center;
         }
     }
-
     ion-card.committee-members {
         .cm-owner {
             display: flex;

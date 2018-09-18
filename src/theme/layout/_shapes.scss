@@ -1,3 +1,4 @@
+// Hotdog
 .hotdog {
 	& {
 	display: flex;
@@ -20,6 +21,7 @@
 		border-radius: 20px;
 	}
 }
+// Band
 .band {
 	background: #41bb72;
 	padding: 10px 20px;
@@ -30,7 +32,7 @@
 	display: flex;
 	align-items: center;
 }
-
+// Card images
 @mixin card-img-sizes {
 	&.img-large {
 		width: 55px;
@@ -59,4 +61,43 @@
 	@include card-img-sizes;
 
 		img { width: 100%; }
+}
+// Media
+.media {
+	display: flex;
+	align-items: center;
+
+	.image {
+		border-radius: 50%;
+		width: 55px;
+		height: 55px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.media {
+		&.property {
+			.image {
+				border: 0;
+				background: #ebebeb;
+				padding: 5px 8px;
+				width: 32px;
+				height: 32px;
+			}
+			.media-body {
+				line-height: 15px;
+			}
+	}
+}
+// Borders
+._border-primary {
+	border: 1px solid #3579ee;
+}
+._border-primary-2 {
+	border: 2px solid #3579ee;
 }

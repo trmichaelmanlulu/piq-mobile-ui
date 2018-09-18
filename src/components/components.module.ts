@@ -15,10 +15,17 @@ import { ManagerPostComponent } from './shared/cards/manager-post/manager-post';
 // Home
 import { NewsfeedComponent } from './components/home/tabs/newsfeed/newsfeed';
 import { FinancialComponent } from './components/home/tabs/financial/financial';
-import { StrataComponent } from './components/home/tabs/strata/strata';
+import { StrataComponent } from './shared/tabs/strata/strata';
 
 // Profile
 import { PropertyGalleryComponent } from './components/profile/cards/property-gallery/property-gallery';
+import { PropertyDetailsComponent } from './components/building/tabs/property-details/property-details';
+import { PropertyInsuranceComponent } from './components/building/tabs/property-insurance/property-insurance';
+import { PropertyLotsComponent } from './components/building/tabs/property-lots/property-lots';
+
+// Meetings
+import { UpcomingMeetingsComponent } from './components/meetings/tabs/upcoming-meetings/upcoming-meetings';
+import { PreviousMeetingsComponent } from './components/meetings/tabs/previous-meetings/previous-meetings';
 
 
 
@@ -35,6 +42,11 @@ import { PropertyGalleryComponent } from './components/profile/cards/property-ga
 		SidemenuComponent,
     	PropertyGalleryComponent,
     	NavbarComponent,
+		PropertyDetailsComponent,
+		PropertyInsuranceComponent,
+		PropertyLotsComponent,
+		UpcomingMeetingsComponent,
+		PreviousMeetingsComponent,
 	],
 	imports: [
 		CommonModule,
@@ -52,6 +64,11 @@ import { PropertyGalleryComponent } from './components/profile/cards/property-ga
 		SidemenuComponent,
     	PropertyGalleryComponent,
     	NavbarComponent,
+		PropertyDetailsComponent,
+		PropertyInsuranceComponent,
+		PropertyLotsComponent,
+		UpcomingMeetingsComponent,
+		PreviousMeetingsComponent,
 	]
 })
 export class ComponentsModule {}

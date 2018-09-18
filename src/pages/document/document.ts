@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { DocumentModalPage } from '../_modals/document-modal/document-modal';
 
 /**
  * Generated class for the DocumentPage page.
@@ -15,7 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DocumentPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  }
+
+  presentDocumentModal(type) {
+    let documentModal = this.modalCtrl.create(DocumentModalPage, { itemType: type });
+    documentModal.present();
   }
 
 }

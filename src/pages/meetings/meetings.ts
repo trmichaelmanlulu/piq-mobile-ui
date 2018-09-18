@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'meetings.html',
 })
 export class MeetingsPage {
+  meetingsSegment = 'upcoming-meetings';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

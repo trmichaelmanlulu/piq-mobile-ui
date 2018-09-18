@@ -1,8 +1,12 @@
 page-home {
-	ion-content {
+	& > ion-content {
 		margin-top: 56px;
 		background: #e2e7ef !important;
 		// background: #efeff4 !important;
+
+		& > .scroll-content {
+			margin-bottom: 112px !important;
+		}
 	}
 
 	.blue-header {
@@ -39,14 +43,6 @@ page-home {
 		.segment-container {
 			padding: 0 3rem;
 			margin-bottom: 2.5rem;
-		}
-		.segment-content {
-			// Ion card
-			ion-card {
-				width: 100%;
-				margin: 0 0 1.5rem 0 !important;
-				border-radius: 0 !important;
-			}
 		}
 	}
 }

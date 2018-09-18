@@ -1,4 +1,11 @@
 app-financial {
+    ion-card {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem !important;
+
+        ion-card-content {
+            padding-bottom: 0 !important;
+        }
+    }
     .financial-details {
         .fd-block {
             flex-basis: 49%;
