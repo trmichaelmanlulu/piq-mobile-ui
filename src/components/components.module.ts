@@ -26,6 +26,9 @@ import { PropertyLotsComponent } from './components/building/tabs/property-lots/
 // Meetings
 import { UpcomingMeetingsComponent } from './components/meetings/tabs/upcoming-meetings/upcoming-meetings';
 import { PreviousMeetingsComponent } from './components/meetings/tabs/previous-meetings/previous-meetings';
+import { FinancialTypesComponent } from './components/financial/cards/financial-types/financial-types';
+import { LevyTotalInfoComponent } from './components/levies/cards/levy-total-info/levy-total-info';
+import { LevyInfoComponent } from './components/levies/cards/levy-info/levy-info';
 
 
 
@@ -47,6 +50,9 @@ import { PreviousMeetingsComponent } from './components/meetings/tabs/previous-m
 		PropertyLotsComponent,
 		UpcomingMeetingsComponent,
 		PreviousMeetingsComponent,
+    	FinancialTypesComponent,
+		LevyTotalInfoComponent,
+		LevyInfoComponent,
 	],
 	imports: [
 		CommonModule,
@@ -69,6 +75,9 @@ import { PreviousMeetingsComponent } from './components/meetings/tabs/previous-m
 		PropertyLotsComponent,
 		UpcomingMeetingsComponent,
 		PreviousMeetingsComponent,
+    	FinancialTypesComponent,
+		LevyTotalInfoComponent,
+		LevyInfoComponent,
 	]
 })
 export class ComponentsModule {}
