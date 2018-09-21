@@ -1,13 +1,5 @@
 page-meetings {
-    & > ion-content {
-		margin-top: 56px;
-		background: #e2e7ef !important;
-		// background: #efeff4 !important;
-
-		& > .scroll-content {
-			margin-bottom: 112px !important;
-        }
-
+    ion-content {
         .calendar-container img {
             width: 80%;
             margin: 0 auto;

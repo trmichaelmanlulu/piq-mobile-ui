@@ -1,13 +1,5 @@
 page-document {
-    & > ion-content {
-		margin-top: 56px;
-		background: #e2e7ef !important;
-		// background: #efeff4 !important;
-
-		& > .scroll-content {
-			margin-bottom: 112px !important;
-        }
-
+    ion-content {
         ion-card-header {
             background: #f2f4f7;
             p {

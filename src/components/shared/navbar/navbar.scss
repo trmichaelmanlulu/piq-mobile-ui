@@ -13,6 +13,7 @@ app-navbar {
 
         .button-inner {
             height: 35px;
+            width: 35px;
 
             img {
                 height: 100%;
@@ -20,20 +21,4 @@ app-navbar {
             }
         }
     }
-    // .navbar-notifications {
-    //     font-size: 2.25rem;      
-    //     position: relative;
-    //     width: 42px;
-    //     top: 1px;
-    //     right: 1px;
-    //     overflow: visible !important;
-
-    //     .navbar-notifications-badge {
-    //         background-color: red;
-    //         position: absolute;
-    //         top: -2px;
-    //         right: 0px;
-    //         border-radius: 100%;
-    //     }
-    // }
 }

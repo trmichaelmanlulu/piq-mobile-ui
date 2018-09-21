@@ -1,12 +1,6 @@
 page-document-modal {
-    ion-navbar  {
-        ion-buttons {
-            position: absolute;
-        }
-    }
     ion-card {
         margin: 10px !important;
-        box-shadow: none !important;
 
         .dc-download {
             opacity: 0.8;

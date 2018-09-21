@@ -13,9 +13,15 @@
 	<div class="main-content">
 		<div class="segment-container">
 			<ion-segment [(ngModel)]="homeSegment">
-				<ion-segment-button value="newsfeed">Newsfeed</ion-segment-button>
-				<ion-segment-button value="financial">Financial</ion-segment-button>
-				<ion-segment-button value="strata">Strata</ion-segment-button>
+				<ion-segment-button class="btn" value="newsfeed">
+					<span>Newsfeed</span>
+				</ion-segment-button>
+				<ion-segment-button class="btn" value="financial">
+					<span>Financial</span>
+				</ion-segment-button>
+				<ion-segment-button class="btn" value="strata">
+					<span>Strata</span>
+				</ion-segment-button>
 			</ion-segment>
 		</div>
 		<div class="segment-content" [ngSwitch]="homeSegment">

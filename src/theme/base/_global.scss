@@ -1,24 +1,39 @@
+// Page title
+.page-title-container {
+	.ptc-left {
+		padding: 0 1rem;
 
-// Links
-a {
-	text-decoration: none;
-}
-p {
-	font-size: 1.7rem;
-	color: #5d5d5d !important;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-size: 1.7rem !important;
-	color: #444444 !important;
-	font-weight: 500 !important;
-}
-input, textarea {
-	color: #5d5d5d !important;
+		svg {
+			transform: scale(0.7);
+		}
+		p {
+			font-size: 1.4rem;
+			color: #555;
+		}
+	}
+	button {
+		transform: scale(0.7);
+		right: -1rem;
+	}
 }
 ion-item,
 ion-label {
 	font-size: 1.4rem;
 	color: #5d5d5d !important;
+}
+// Modals
+ion-navbar.page-modal  {
+	ion-buttons {
+		position: absolute;
+	}
+}
+ion-content.page-modal {
+	ion-card {
+		box-shadow: none !important;
+		border-radius: 0 !important;
+		width: 100% !important;
+		margin: 0 !important;
+	}
 }
 // Table
 table {
@@ -29,24 +44,6 @@ table {
 		strong {
 			font-weight: 500 !important;
 		}
-	}
-}
-// Button
-ion-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-button[ion-button].btn {
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-    border-radius: 2rem !important;
-	padding: 10px 2.5rem !important;
-	height: 35px !important;
-
-	.button-inner {
-		display: flex !important;
-		align-items: center !important;
-		justify-content: center !important;
 	}
 }
 // Searchbar
@@ -65,22 +62,6 @@ ion-searchbar {
 // Segments
 ion-segment {
 	transform: scale(0.9);
-
-	ion-segment-button {
-		padding: 0.1rem 0.75rem;
-		color: #3579ee;
-		border: 1px solid #fff !important;
-		border-radius: 2.5rem;
-		margin: 0 0.5rem !important;
-		background: #fff !important;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-	
-		&.segment-activated {
-			border-color: #368aff !important;
-			background: #368aff !important;
-			color: #fff !important;
-		}
-	}
 }
 // Popovers
 ion-popover {
@@ -100,31 +81,12 @@ ion-title {
 		font-size: 1.7rem;
 	}
 }
-// Page title
-.page-title-container {
-	.ptc-left {
-		padding: 0 1rem;
-
-		svg {
-			transform: scale(0.7);
-		}
-		p {
-			font-size: 1.4rem;
-			color: #555;
-		}
-	}
-	button {
-		transform: scale(0.7);
-		right: -1rem;
-	}
-}
 // Card
 ion-card {
 	margin-bottom: 1.5rem !important;
 	border-radius: 0.75rem !important;
 	box-shadow: 0 1px 2px rgba(167,167,167, .5) !important;
 }
-
 .card-layout {
 	text-align: left;
 

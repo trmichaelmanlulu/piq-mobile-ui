@@ -4,6 +4,10 @@ app-levy-info {
     }
     .ll-total-balance {
         padding: 1.25rem 4.5rem !important;
+
+        @media screen and (max-width: 320px) {
+          padding: 1.25rem 2.5rem !important;
+        }
         
         h4 {
             font-size: 2rem !important;
@@ -77,6 +81,16 @@ app-levy-info {
       }
       
       .levy-lot {
+        @media screen and (max-width: 320px) {
+          .media .image {
+            width: 40px;
+            height: 40px;
+
+            svg {
+              transform: scale(0.75);
+            }
+          }
+        }
           .media-actions {
             button {
               border-radius: 4px;

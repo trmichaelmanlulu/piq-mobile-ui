@@ -1,14 +1,4 @@
 page-home {
-	& > ion-content {
-		margin-top: 56px;
-		background: #e2e7ef !important;
-		// background: #efeff4 !important;
-
-		& > .scroll-content {
-			margin-bottom: 112px !important;
-		}
-	}
-
 	.blue-header {
 		background: linear-gradient(to bottom, #3579ee, #68c3ff);
 		position: absolute;
@@ -25,7 +15,6 @@ page-home {
 		margin: 2rem auto 1rem auto !important;
 
 		.card-image {
-			max-height: 200px;
 			overflow: hidden;
 		}
 

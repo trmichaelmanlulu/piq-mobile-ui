@@ -4,30 +4,32 @@
 
 <ion-content parallax-header #pageContent>
 
-  <ion-slides class="header-image" autoplay pager>
-    <ion-slide>
-      <img src="assets/imgs/building-background.jpeg" alt="">
-    </ion-slide>
-
-    <ion-slide>
-      <img src="assets/imgs/building-background.jpeg" alt="">
-    </ion-slide>
-
-    <ion-slide>
-      <img src="assets/imgs/building-background.jpeg" alt="">
-    </ion-slide>
-  </ion-slides>
+  <div id="header-slides">
+    <ion-slides class="header-image" autoplay pager>
+      <ion-slide>
+        <img src="assets/imgs/building-background.jpeg" alt="">
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="assets/imgs/building-background.jpeg" alt="">
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="assets/imgs/building-background.jpeg" alt="">
+      </ion-slide>
+    </ion-slides>
+  </div>
   
   <div class="main-content" no-padding>
-    <div class="building-name px-2 py-3" #buildingName>
+    <div id="property-name"class="building-name px-2 py-3" #buildingName>
       <h3 class="m-0">Atarmon Building</h3>
     </div>
     <div class="segment-container mt-2 mb-4">
       <ion-segment [(ngModel)]="buildingSegment">
-        <ion-segment-button value="property-details" (click)="resetHeaderScrolled()">Details</ion-segment-button>
-        <ion-segment-button value="property-insurance" (click)="resetHeaderScrolled()">Insurance</ion-segment-button>
-        <ion-segment-button value="property-lots" (click)="resetHeaderScrolled()">Lots</ion-segment-button>
-        <ion-segment-button value="property-strata" (click)="resetHeaderScrolled()">Strata</ion-segment-button>
+        <ion-segment-button class="btn" value="property-details" (click)="resetHeaderScrolled()"><span>Details</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-insurance" (click)="resetHeaderScrolled()"><span>Insurance</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-lots" (click)="resetHeaderScrolled()"><span>Lots</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-strata" (click)="resetHeaderScrolled()"><span>Contact</span></ion-segment-button>
       </ion-segment>
     </div>
     <div class="segment-content" [ngSwitch]="buildingSegment">

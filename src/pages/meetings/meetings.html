@@ -8,8 +8,12 @@
     
     <div class="segment-container mt-2 mb-4">
         <ion-segment [(ngModel)]="meetingsSegment">
-            <ion-segment-button value="upcoming-meetings">Upcoming</ion-segment-button>
-            <ion-segment-button value="previous-meetings">Previous</ion-segment-button>
+            <ion-segment-button class="btn" value="upcoming-meetings">
+                <span>Upcoming</span>
+            </ion-segment-button>
+            <ion-segment-button class="btn" value="previous-meetings">
+                <span>Previous</span>
+            </ion-segment-button>
         </ion-segment>
     </div>
 
