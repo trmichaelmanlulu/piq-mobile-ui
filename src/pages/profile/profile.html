@@ -27,7 +27,7 @@
         johnsmith@piq.com.au
       </p>
       <p>
-        <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g class="nc-icon-wrapper" stroke-width="1" fill="#333333" stroke="#333333"><path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M12,10l-2,2L4,6l2-2 L3,1L1,3c0,6.627,5.373,12,12,12l2-2L12,10z" data-cap="butt"/> </g></svg>
+        <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g class="nc-icon-wrapper" stroke-width="1" fill="#666666" stroke="#666666"><path fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M12,10l-2,2L4,6l2-2 L3,1L1,3c0,6.627,5.373,12,12,12l2-2L12,10z" data-cap="butt"/> </g></svg>
         +61 450 123 456
       </p>
     </div>
@@ -56,16 +56,16 @@
 
     <div class="recent-updates">
       <!-- Card layout (Repair) -->
-      <app-card-repair [postType]="'pinned'" (click)="presentNewsfeedItemModal()"></app-card-repair>
+      <app-card-repair [postType]="'pinned'"></app-card-repair>
     
       <!-- Card layout (Levies) -->
-      <app-card-levies [postType]="'pinned'" (click)="presentNewsfeedItemModal()"></app-card-levies>
+      <app-card-levies [postType]="'pinned'"></app-card-levies>
     
       <!-- Card layout (Manager post) -->
-      <app-card-manager-post [postType]="'pinned'" (click)="presentNewsfeedItemModal()"></app-card-manager-post>
+      <app-card-manager-post [postType]="'pinned'"></app-card-manager-post>
     
       <!-- Card layout (Payment IP) -->
-      <app-card-payment [postType]="'pinned'" (click)="presentNewsfeedItemModal()"></app-card-payment>
+      <app-card-payment [postType]="'pinned'"></app-card-payment>
     </div>
   </div>
 </ion-content>

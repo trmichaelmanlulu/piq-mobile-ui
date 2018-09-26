@@ -16,6 +16,7 @@
 		right: -1rem;
 	}
 }
+// Labels
 ion-item,
 ion-label {
 	font-size: 1.4rem;
@@ -27,6 +28,7 @@ ion-navbar.page-modal  {
 		position: absolute;
 	}
 }
+// Content
 ion-content.page-modal {
 	ion-card {
 		box-shadow: none !important;
@@ -128,6 +130,10 @@ ion-card {
 		}
 		p {
 			white-space: normal;
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
 		}
 	}
 	.cl-footer {
@@ -157,7 +163,7 @@ ion-card {
 	&.cl-manager-post {
 		.cl-header {
 			.cl-title {
-				max-width: 120px;
+				max-width: 42vw;
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;

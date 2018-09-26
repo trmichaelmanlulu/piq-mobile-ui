@@ -21,10 +21,10 @@ app-financial-types {
             background: white;
             border-radius: 50%;
             text-align: center;
+            z-index: 1;
             
             img {
               position: absolute;
-              z-index: 3;
               left: 0;
               right: 0;
               margin: 5px auto 0;
@@ -33,6 +33,7 @@ app-financial-types {
             }
           }
           .card-body {
+            position: relative;
             z-index: 2;
             padding-top: 1.25rem;
             border-radius: 4px;

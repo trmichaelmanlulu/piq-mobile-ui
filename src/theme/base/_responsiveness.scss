@@ -3,6 +3,9 @@
     html {
         font-size: 12px;
     }
+    ion-navbar {
+        padding: 1.25rem 4px !important;
+    }
 }
 @media screen and (min-width: 768px) {
     html {

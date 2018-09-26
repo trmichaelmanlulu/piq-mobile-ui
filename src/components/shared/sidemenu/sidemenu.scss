@@ -64,7 +64,7 @@ app-sidemenu {
                         margin: 0.75rem 0 0 0;
                     }
                     .property-address {
-                        color: #b1b6c1 !important;
+                        color: #d5d9e0 !important;
                         margin: 0;
                         font-size: 1.4rem;
                     }
@@ -86,49 +86,6 @@ app-sidemenu {
                         color: #4b8dff !important;
                         font-weight: bold;
                     }
-
-                    // dashboard
-                    // financial
-                    // levies 
-                    .svg-dashboard,
-                    .svg-financial,
-		            .svg-levies {
-                        g, line, rect, path {
-                            stroke: $p-color !important;
-                        }
-                    }
-                    // documents
-                    .svg-documents {
-                        g, rect, line {
-                            stroke: $p-color !important;
-                        }
-                    }
-                    // open items
-                    .svg-open-items {
-                        polyline, line {
-                            stroke: $p-color !important;
-                        }
-                    }
-                    // meetings
-                    .svg-calendar {
-                        line, rect, polyline, path, circle {
-                            stroke: $p-color !important;
-                        }
-                    }
-                    // faqs
-                    .svg-faqs {
-                        g, line, rect, polyline  {
-                            stroke: $p-color !important;
-                        }
-                    }
-                    // user
-                    // settings
-                    .svg-user,
-                    .svg-settings {
-                        g, path, polyline, line, circle {
-                            stroke: $p-color !important;
-                        }
-                    }
                 }
                 ion-label {
                     font-size: 1.5rem !important;
@@ -137,12 +94,13 @@ app-sidemenu {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin-right: 0;
 
                     svg {
                         transform: scale(0.85);
                     }
+                }
 
+                &:not(.active) {
                     // dashboard
                     // financial
                     // levies 
@@ -185,8 +143,11 @@ app-sidemenu {
                             stroke: #7c7c7c !important;
                         }
                     }
-                    .item-inner {
-                        margin: 0 !important;
+                    // repair, fix, wrench
+                    .svg-repair {
+                        g, path {
+                            stroke: #7c7c7c !important;
+                        }
                     }
                 }
             }

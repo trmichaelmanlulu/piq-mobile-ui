@@ -37,6 +37,16 @@ app-newsfeed {
                     width: 85% !important;
                     display: inline-block;
                     margin-left: 1rem !important;
+
+                    @media screen and (min-width: 500px) {
+                        width: 70% !important;
+                    }
+                    @media screen and (min-width: 768px) {
+                        width: 60% !important;
+                    }
+                    @media screen and (min-width: 991px) {
+                        width: 50% !important;
+                    }
                     
                     
                     .cl-body {
@@ -50,7 +60,6 @@ app-newsfeed {
                             left: 0;
                             right: 0;
                             height: 50px;
-                            background: linear-gradient(to top, #fff, transparent);
                         }
                     }
                     .cl-footer {

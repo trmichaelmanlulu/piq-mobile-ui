@@ -15,11 +15,11 @@
 	<div class="ldc-bottom d-flex flex-row">
 		<button ion-button class="btn flex-1 d-flex justify-content-centerr-1" text-center>
 			<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><title>View statements</title><g class="nc-icon-wrapper" stroke-width="1" fill="#666666" stroke="#fff"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M0.5,8 c0,0,3-5.5,7.5-5.5S15.5,8,15.5,8s-3,5.5-7.5,5.5S0.5,8,0.5,8z"></path><circle data-color="color-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="8" cy="8" r="2.5"></circle></g></svg>
-			<span class="m-0">View</span>
+			<span class="button-inner m-0">View</span>
 		</button>
-		<button ion-button class="btn flex-1 _card-line-top d-flex justify-content-center ml-1" text-center>
+		<button ion-button class="btn flex-1 d-flex justify-content-center ml-1" text-center>
 			<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><title>Pay now</title><g class="nc-icon-wrapper" stroke-width="1" fill="#666666" stroke="#fff"><path d="M13.5.5H2.5a1,1,0,0,0-1,1v14l2.5-2,2,2,2-2,2,2,2-2,2.5,2V1.5A1,1,0,0,0,13.5.5Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path><line x1="4.5" y1="9.5" x2="7.5" y2="9.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></line><circle cx="8" cy="5" r="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></circle><line x1="11.5" y1="9.5" x2="10.5" y2="9.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></line></g></svg>
-			<span class="m-0">Pay Now</span>
+			<span class="button-inner m-0">Pay Now</span>
 		</button>
 	</div>
 </ion-card>
@@ -36,7 +36,7 @@
 	<!-- <button ion-button round>Show all</button> -->
 </div>
 
-<ion-scroll scrollX="true" direction="x">
+<ion-scroll scrollX="true" direction="x" class="mb-2">
 	<!-- Card layout (Repair) -->
 	<app-card-repair [postType]="'pinned'" (click)="presentNewsfeedItemModal()"></app-card-repair>
 
@@ -61,14 +61,14 @@
 
 <div class="recent-posts">
 	<!-- Card layout (Repair) -->
-	<app-card-repair [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-repair>
+	<app-card-repair [postType]="'recent'"></app-card-repair>
 
 	<!-- Card layout (Levies) -->
-	<app-card-levies [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-levies>
+	<app-card-levies [postType]="'recent'"></app-card-levies>
 
 	<!-- Card layout (Manager post) -->
-	<app-card-manager-post [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-manager-post>
+	<app-card-manager-post [postType]="'recent'"></app-card-manager-post>
 
 	<!-- Card layout (Payment IP) -->
-	<app-card-payment [postType]="'recent'" (click)="presentNewsfeedItemModal()"></app-card-payment>
+	<app-card-payment [postType]="'recent'"></app-card-payment>
 </div>

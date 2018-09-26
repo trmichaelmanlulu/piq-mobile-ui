@@ -22,14 +22,14 @@
   
   <div class="main-content" no-padding>
     <div id="property-name"class="building-name px-2 py-3" #buildingName>
-      <h3 class="m-0">Atarmon Building</h3>
+      <h3 class="_ts-white m-0">Atarmon Building</h3>
     </div>
     <div class="segment-container mt-2 mb-4">
       <ion-segment [(ngModel)]="buildingSegment">
-        <ion-segment-button class="btn" value="property-details" (click)="resetHeaderScrolled()"><span>Details</span></ion-segment-button>
-        <ion-segment-button class="btn" value="property-insurance" (click)="resetHeaderScrolled()"><span>Insurance</span></ion-segment-button>
-        <ion-segment-button class="btn" value="property-lots" (click)="resetHeaderScrolled()"><span>Lots</span></ion-segment-button>
-        <ion-segment-button class="btn" value="property-strata" (click)="resetHeaderScrolled()"><span>Contact</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-details" (click)="resetHeaderScrolled()"><span class="button-inner">Details</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-insurance" (click)="resetHeaderScrolled()"><span class="button-inner">Insurance</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-lots" (click)="resetHeaderScrolled()"><span class="button-inner">Lots</span></ion-segment-button>
+        <ion-segment-button class="btn" value="property-strata" (click)="resetHeaderScrolled()"><span class="button-inner">Contact</span></ion-segment-button>
       </ion-segment>
     </div>
     <div class="segment-content" [ngSwitch]="buildingSegment">
@@ -52,7 +52,7 @@
           </div>
           <div class="d-flex align-items-center justify-content-center _card-line-top pt-1 mt-3">
             <button ion-button clear class="_tl-default card-link" href="#">
-              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>Contact Manager</title><g class="nc-icon-wrapper" stroke-width="1" fill="#666666" stroke="#3579ee"><polyline fill="none" stroke="#3579ee" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 4.504,9.503 12.5,15.5 15.5,0.5 0.5,6.5 2.502,8.001 " data-cap="butt"></polyline><polyline fill="none" stroke="#3579ee" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 7.63,11.848 4.5,15.5 4.504,9.503 9,6.5 " data-cap="butt"></polyline></g></svg>
+              <svg class="svg-contact mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>Contact Manager</title><g class="nc-icon-wrapper" stroke-width="1" fill="#666666" stroke="#3579ee"><polyline fill="none" stroke="#3579ee" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 4.504,9.503 12.5,15.5 15.5,0.5 0.5,6.5 2.502,8.001 " data-cap="butt"></polyline><polyline fill="none" stroke="#3579ee" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 7.63,11.848 4.5,15.5 4.504,9.503 9,6.5 " data-cap="butt"></polyline></g></svg>
               Contact Manager
             </button>
           </div>

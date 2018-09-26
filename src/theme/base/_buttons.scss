@@ -8,32 +8,18 @@ button[ion-button].btn {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
 	border-radius: 2.5rem !important;
 	height: unset;
-	padding: 1rem !important;
-
-	.button-inner {
-		span {
-			position: relative;
-			top: 2px;
-		}
-	}
+	padding: 1.15rem !important;
 }
 ion-segment-button.btn {
 	background: #fff !important;
 	color: #3579ee;
 	border: 1px solid #fff !important;
-	border-radius: 2.5rem;
-	margin: 0 0.5rem !important;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-	height: unset;
-	padding: 0.1rem 0.75rem;
+	height: unset !important;
 
 	&.segment-activated {
 		border-color: #368aff !important;
 		background: #368aff !important;
 		color: #fff !important;
-	}
-	span {
-		position: relative;
-		top: 2px;
 	}
 }

@@ -1,4 +1,7 @@
 page-notifications {
+    ion-content#page-notification {
+        background: #fff !important;
+    }
     ion-navbar {
         position: relative;
         padding: 1rem !important;
@@ -25,16 +28,19 @@ page-notifications {
     }
     ion-list {
         .hn-items {
-            border-radius: 4px;
             margin: 0;
             padding: 0 1.5rem !important;
-            border-bottom: 1px solid #e7e9ec !important;
+            
+            &:not(:last-child) {
+                border-bottom: 1px solid #e7e9ec !important;
+            }
 
             &.active {
                 background: #f0f2f7 !important;
             }
             .item-inner {
                 border: none !important;
+                padding: 0 0.5rem !important;
 
                 ion-label {
                     display: flex;
@@ -62,7 +68,6 @@ page-notifications {
                     }
                     .notif-name {
                         font-size: 1.35rem;
-                        color: #587ab5 !important;
                     }
                     .notif-info {
                         font-size: 1.6rem;

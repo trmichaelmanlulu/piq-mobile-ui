@@ -28,8 +28,8 @@ export class BuildingPage {
   ionViewDidLoad() {
     var headerHeight = document.getElementById('header-slides').offsetHeight | document.getElementById('header-slides').clientHeight;
     var nameHeight = document.getElementById('property-name').offsetHeight | document.getElementById('property-name').clientHeight;
-    console.log(headerHeight + ' ' + (nameHeight/1.5));
-    var offsetScroll = headerHeight - (nameHeight / 1.5);
+    console.log(headerHeight + ' ' + (nameHeight/1.15));
+    var offsetScroll = headerHeight - (nameHeight / 1.15);
     console.log(offsetScroll);
 
     this.content.ionScroll.subscribe(($event: any) => {
