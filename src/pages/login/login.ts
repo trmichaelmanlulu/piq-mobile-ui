@@ -1,27 +1,39 @@
 declare var window;
 
 import { Observable, Subscription } from 'rxjs';
-import { Component } from '@angular/core';
+import { Component, Renderer2, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
 import { RegisterPage } from "../register/register";
+import { BrandingProvider } from '../../providers/branding/branding';
 
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   showKeyboard = false;
   inputFocus = false;
   private keybaordShowSub: Subscription;
   private keyboardHideSub: Subscription;
 
-  constructor(public navCtrl: NavController, public forgotCtrl: AlertController, public toastCtrl: ToastController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public forgotCtrl: AlertController, 
+    public toastCtrl: ToastController, 
+    public navParams: NavParams,
+    private renderer: Renderer2,
+    private brandingProvider: BrandingProvider) {
+      this.brandingProvider.renderer = this.renderer;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  ngOnInit() {
+    this.setBranding();
   }
 
   register() {
@@ -101,5 +113,11 @@ export class LoginPage {
 	private removeKeyboardListeners() {
 		if (this.keybaordShowSub) this.keybaordShowSub.unsubscribe();
 		if (this.keyboardHideSub) this.keyboardHideSub.unsubscribe();
+  }
+
+  setBranding() {
+    const branding = this.brandingProvider.branding;
+    this.brandingProvider.setPrimaryColor(branding.primary.value);
+    this.brandingProvider.setBackgroundColor(branding.bgColor.value);
   }
 }

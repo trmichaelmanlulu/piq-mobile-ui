@@ -8,6 +8,7 @@ import { OpenItemsPage } from '../../../pages/open-items/open-items';
 import { MeetingsPage } from '../../../pages/meetings/meetings';
 import { FaqsPage } from '../../../pages/faqs/faqs';
 import { BuildingPage } from '../../../pages/building/building';
+import { StrataSettingsPage } from '../../../pages/strata-settings/strata-settings';
 
 /**
  * Generated class for the SidemenuComponent component.
@@ -57,5 +58,8 @@ export class SidemenuComponent {
     this.activePage = '';
     this.appCtrl.getActiveNav().setRoot(BuildingPage);
   }
-
+  goToStrataSettingsPage() {
+    this.activePage = 'strata-settings';
+    this.appCtrl.getActiveNav().setRoot(StrataSettingsPage);
+  }
 }

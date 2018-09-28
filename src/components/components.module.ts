@@ -26,10 +26,17 @@ import { PropertyLotsComponent } from './components/building/tabs/property-lots/
 // Meetings
 import { UpcomingMeetingsComponent } from './components/meetings/tabs/upcoming-meetings/upcoming-meetings';
 import { PreviousMeetingsComponent } from './components/meetings/tabs/previous-meetings/previous-meetings';
+
+// Financials
 import { FinancialTypesComponent } from './components/financial/cards/financial-types/financial-types';
+
+// Levies
 import { LevyTotalInfoComponent } from './components/levies/cards/levy-total-info/levy-total-info';
 import { LevyInfoComponent } from './components/levies/cards/levy-info/levy-info';
 
+// Strata settings
+import { GeneralComponent } from '../components/components/strata-settings/tabs/general/general';
+import { ThemeComponent } from '../components/components/strata-settings/tabs/theme/theme';
 
 
 @NgModule({
@@ -53,6 +60,8 @@ import { LevyInfoComponent } from './components/levies/cards/levy-info/levy-info
     	FinancialTypesComponent,
 		LevyTotalInfoComponent,
 		LevyInfoComponent,
+		GeneralComponent,
+		ThemeComponent,
 	],
 	imports: [
 		CommonModule,
@@ -78,6 +87,8 @@ import { LevyInfoComponent } from './components/levies/cards/levy-info/levy-info
     	FinancialTypesComponent,
 		LevyTotalInfoComponent,
 		LevyInfoComponent,
+		GeneralComponent,
+		ThemeComponent,
 	]
 })
 export class ComponentsModule {}

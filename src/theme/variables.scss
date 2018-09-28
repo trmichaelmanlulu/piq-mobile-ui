@@ -84,14 +84,14 @@ $dg-blue:       linear-gradient(to bottom, #021b58, #1441bf);
 $dg-purple:     linear-gradient(to bottom, #14075a, #4c1390);
 
 // Background
-#main-body.bg-light {
-  @include light-theme(
-    color($bg-colors, light)
-  );
-}
 #main-body.bg-default {
   @include light-theme(
     color($bg-colors, default)
+  );
+}
+#main-body.bg-light {
+  @include light-theme(
+    color($bg-colors, light)
   );
 }
 #main-body.bg-dark {

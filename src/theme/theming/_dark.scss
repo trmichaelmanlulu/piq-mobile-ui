@@ -240,6 +240,9 @@
                     &:not(:last-child) {
                         border-bottom: 1px solid $drk-card-line-color !important;
                     }
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
                 }
             }
         }
@@ -287,6 +290,21 @@
         }
     }
 
+    // Login
+    page-login {
+        .login-body {
+            background: $drk-card-color;
+            
+            .item-inner {
+                border-bottom: 1px solid $drk-card-line-color;
+
+                input {
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+
 
     // ========================================================================
     // Components
@@ -327,6 +345,15 @@
     // Page title
     .page-title-container p {
         color: #7c859a !important;
+    }
+
+    // Theme
+    app-theme {
+        ion-scroll {
+            background: #3c475a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
     }
 
     // ========================================================================

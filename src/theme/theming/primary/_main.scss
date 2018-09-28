@@ -86,6 +86,9 @@
         [aria-checked=true] .alert-radio-label {
             color: $primary;
         }
+        .alert-md.alert-input:focus {
+            border-bottom: 2px solid $primary;
+        }
     }
 
     // ========================================================================
@@ -118,6 +121,13 @@
         background: $primary !important;
     }
 
+    // Login
+    .login-page {
+        &::before {
+            background: $gradient;
+        }
+    }
+
     // ========================================================================
     // Components
     // ========================================================================
@@ -137,6 +147,20 @@
         border: 1px solid $primary;
     }
 
+    // Theme
+    app-theme {
+        .phone {
+            &.selected {
+                border: 2px solid $primary;
+            }
+        }
+        .bg-container {
+            .phone {
+                .header, .circle { background: lighten($primary, 15%); }
+            }
+        }
+    }
+
     // ========================================================================
     // Platform specific
     // ========================================================================
@@ -146,6 +170,15 @@
         ion-alert .alert-wrapper [aria-checked=true] .alert-radio-inner {
             background: none !important;
             border-color: $primary !important;
+        }
+    }
+
+    .md {
+        // Alert
+        ion-alert.alert-md .alert-wrapper {
+            .alert-input:focus {
+                border-bottom: 2px solid $primary;
+            }
         }
     }
 }

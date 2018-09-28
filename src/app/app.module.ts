@@ -3,6 +3,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 // Ionic native
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,6 @@ import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
 import { FinancialPage } from '../pages/financial/financial';
 import { LeviesPage } from '../pages/levies/levies';
 import { DocumentPage } from '../pages/document/document';
@@ -30,6 +30,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { SettingsPage } from '../pages/settings/settings';
 import { BuildingPage } from '../pages/building/building';
+import { StrataSettingsPage } from '../pages/strata-settings/strata-settings';
 
 // Pages (Modals)
 import { MyPropertiesModalPage } from '../pages/_modals/my-properties-modal/my-properties-modal';
@@ -46,6 +47,9 @@ import { ProfilePopoverPage } from '../pages/_popovers/profile-popover/profile-p
 // Directives
 import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 
+// Providers
+import { BrandingProvider } from '../providers/branding/branding';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -53,7 +57,6 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     TabsPage,
     HomePage,
     LoginPage,
-    RegisterPage,
     FinancialPage,
     LeviesPage,
     DocumentPage,
@@ -64,6 +67,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     NotificationsPage,
     SettingsPage,
     BuildingPage,
+    StrataSettingsPage,
 
     MyPropertiesModalPage,
     NewsfeedModalPage,
@@ -78,6 +82,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     ParallaxHeaderDirective,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp)
@@ -89,7 +94,6 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     TabsPage,
     HomePage,
     LoginPage,
-    RegisterPage,
     FinancialPage,
     LeviesPage,
     DocumentPage,
@@ -100,6 +104,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     NotificationsPage,
     SettingsPage,
     BuildingPage,
+    StrataSettingsPage,
 
     MyPropertiesModalPage,
     NewsfeedModalPage,
@@ -115,7 +120,8 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
     StatusBar,
     SplashScreen,
     Keyboard,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BrandingProvider
   ]
 })
 export class AppModule {}
