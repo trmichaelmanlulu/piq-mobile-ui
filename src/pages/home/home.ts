@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, App } from 'ionic-angular';
-import { BuildingPage } from '../building/building';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +15,7 @@ export class HomePage {
   }
 
   goToBuildingPage() {
-    this.appCtrl.getActiveNav().setRoot(BuildingPage);
+    this.appCtrl.getActiveNav().setRoot('BuildingPage');
   }
 
 }

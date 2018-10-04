@@ -1,4 +1,3 @@
-
 // Core
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -49,6 +48,8 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 
 // Providers
 import { BrandingProvider } from '../providers/branding/branding';
+import { NotifyProvider } from './../providers/notify/notify';
+import { StrataApiProvider } from './../providers/strata-api/strata-api';
 
 @NgModule({
   declarations: [
@@ -103,9 +104,8 @@ import { BrandingProvider } from '../providers/branding/branding';
     ProfilePage,
     NotificationsPage,
     SettingsPage,
-    BuildingPage,
+    BuildingPage,    
     StrataSettingsPage,
-
     MyPropertiesModalPage,
     NewsfeedModalPage,
     NotificationsModalPage,
@@ -121,7 +121,9 @@ import { BrandingProvider } from '../providers/branding/branding';
     SplashScreen,
     Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BrandingProvider
+    BrandingProvider,
+    NotifyProvider,
+    StrataApiProvider
   ]
 })
 export class AppModule {}

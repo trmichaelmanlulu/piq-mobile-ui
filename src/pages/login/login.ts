@@ -4,8 +4,8 @@ import { Observable, Subscription } from 'rxjs';
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
-import { RegisterPage } from "../register/register";
 import { BrandingProvider } from '../../providers/branding/branding';
+import { NotifyProvider } from './../../providers/notify/notify';
 
 @IonicPage()
 @Component({
@@ -24,7 +24,8 @@ export class LoginPage implements OnInit {
     public toastCtrl: ToastController, 
     public navParams: NavParams,
     private renderer: Renderer2,
-    private brandingProvider: BrandingProvider) {
+    private brandingProvider: BrandingProvider,
+    private notifyProvider: NotifyProvider) {
       this.brandingProvider.renderer = this.renderer;
   }
 
@@ -34,10 +35,6 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.setBranding();
-  }
-
-  register() {
-    this.navCtrl.setRoot(RegisterPage);
   }
 
   login() {
@@ -66,15 +63,7 @@ export class LoginPage implements OnInit {
           text: 'Send',
           handler: data => {
             console.log('Send clicked');
-            let toast = this.toastCtrl.create({
-              message: 'Email was sended successfully',
-              duration: 5000,
-              position: 'top',
-              cssClass: 'dark-trans',
-              closeButtonText: 'OK',
-              showCloseButton: true
-            });
-            toast.present();
+            this.notifyProvider.presentToast({message: 'Email was sended successfully', duration: 5000, position: 'top', showCloseButton: true, closeButtonText: 'OK',})
           }
         }
       ]

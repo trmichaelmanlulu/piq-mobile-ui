@@ -6,7 +6,6 @@ import { Injectable, Renderer2 } from '@angular/core';
 export class BrandingProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello BrandingProvider Provider');
   }
 
   renderer: Renderer2;

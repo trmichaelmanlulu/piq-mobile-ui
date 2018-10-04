@@ -21,7 +21,7 @@ export class TabsPage {
 
   constructor(
     public navCtrl: NavController, 
-    public brandingProvider: BrandingProvider, 
+    private brandingProvider: BrandingProvider, 
     private renderer: Renderer2) {
       this.brandingProvider.renderer = this.renderer;
   }
