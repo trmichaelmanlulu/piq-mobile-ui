@@ -1,3 +1,4 @@
+import { SharedCardsComponentsModule } from './../../../components/shared/cards/shared-cards-components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { NewsfeedModalPage } from './newsfeed-modal';
@@ -8,6 +9,10 @@ import { NewsfeedModalPage } from './newsfeed-modal';
   ],
   imports: [
     IonicPageModule.forChild(NewsfeedModalPage),
+    SharedCardsComponentsModule
   ],
+  exports: [
+    NewsfeedModalPage
+  ]
 })
 export class NewsfeedModalPageModule {}

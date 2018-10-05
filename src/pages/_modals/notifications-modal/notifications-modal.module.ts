@@ -1,3 +1,4 @@
+import { SharedCardsComponentsModule } from './../../../components/shared/cards/shared-cards-components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { NotificationsModalPage } from './notifications-modal';
@@ -8,6 +9,10 @@ import { NotificationsModalPage } from './notifications-modal';
   ],
   imports: [
     IonicPageModule.forChild(NotificationsModalPage),
+    SharedCardsComponentsModule
   ],
+  exports: [
+    NotificationsModalPage
+  ]
 })
 export class NotificationsModalPageModule {}

@@ -9,5 +9,8 @@ import { DocumentModalPage } from './document-modal';
   imports: [
     IonicPageModule.forChild(DocumentModalPage),
   ],
+  exports: [
+    DocumentModalPage
+  ]
 })
 export class DocumentModalPageModule {}

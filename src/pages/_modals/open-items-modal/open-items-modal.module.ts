@@ -9,5 +9,8 @@ import { OpenItemsModalPage } from './open-items-modal';
   imports: [
     IonicPageModule.forChild(OpenItemsModalPage),
   ],
+  exports: [
+    OpenItemsModalPage
+  ]
 })
 export class OpenItemsModalPageModule {}

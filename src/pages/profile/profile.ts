@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
-import { ProfilePopoverPage } from '../_popovers/profile-popover/profile-popover';
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -24,7 +16,8 @@ export class ProfilePage {
   }
 
   presentPopover(myEvent) {
-    const popover = this.popoverCtrl.create(ProfilePopoverPage);
+    const items = ['Edit', 'Settings'];
+    const popover = this.popoverCtrl.create('ListPopoverPage', items);
     popover.present({
       ev: myEvent
     });

@@ -3,17 +3,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-meetings',
-  templateUrl: 'meetings.html',
+  selector: 'page-list-popover',
+  templateUrl: 'list-popover.html',
 })
-export class MeetingsPage {
-  meetingsSegment = 'upcoming-meetings';
+export class ListPopoverPage {
+  items: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.items = this.navParams.data;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MeetingsPage');
+    console.log('Items: ', this.items);
   }
 
 }

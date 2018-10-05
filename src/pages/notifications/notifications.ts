@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, ModalController } from 'ionic-angular';
-import { NotificationPopoverPage } from '../_popovers/notification-popover/notification-popover';
-import { NotificationsModalPage } from './../_modals/notifications-modal/notifications-modal';
-
-/**
- * Generated class for the NotificationsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -28,14 +19,15 @@ export class NotificationsPage {
   }
 
   presentPopover(myEvent) {
-    const popover = this.popoverCtrl.create(NotificationPopoverPage);
+    const items = ['Mark all as read', 'Mute', 'Settings'];
+    const popover = this.popoverCtrl.create('ListPopoverPage', items);
     popover.present({
       ev: myEvent
     });
   }
 
   presentNotificationsModal() {
-    let notificationsModal = this.modalCtrl.create(NotificationsModalPage);
+    let notificationsModal = this.modalCtrl.create('NotificationsModalPage');
     notificationsModal.present();
   }
 

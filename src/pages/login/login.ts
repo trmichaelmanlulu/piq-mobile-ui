@@ -3,7 +3,7 @@ declare var window;
 import { Observable, Subscription } from 'rxjs';
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
-import { TabsPage } from "../tabs/tabs";
+// import { TabsPage } from "../tabs/tabs";
 import { BrandingProvider } from '../../providers/branding/branding';
 import { NotifyProvider } from './../../providers/notify/notify';
 
@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot('TabsPage');
   }
 
   forgotPassword() {

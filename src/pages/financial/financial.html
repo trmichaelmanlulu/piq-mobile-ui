@@ -4,7 +4,7 @@
   <ion-grid class="p-0 mt-4 pt-4">
     <ion-row>
       <ion-col col-4 class="mb-2">
-          <app-financial-types [label]="'Admin Fund'" [balance]="adminBalance" [icon]="'assets/icon/icon-admin-cash.svg'" [balanceIsLoading]="bankBalancesLoading"></app-financial-types>
+        <app-financial-types [label]="'Admin Fund'" [balance]="adminBalance" [icon]="'assets/icon/icon-admin-cash.svg'" [balanceIsLoading]="bankBalancesLoading"></app-financial-types>
       </ion-col>
       <ion-col col-4 class="mb-2">
         <app-financial-types [label]="'Sinking Cash'" [balance]="sinkingBalance" [icon]="'assets/icon/icon-sinking-cash.svg'" [balanceIsLoading]="bankBalancesLoading || buildingIsLoading"></app-financial-types>
