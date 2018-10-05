@@ -29,8 +29,10 @@ import { StrataApiProvider } from './../providers/strata-api/strata-api';
     BrowserModule,
 
     SidemenuComponentModule,
-    
-    IonicModule.forRoot(MyApp)
+
+    IonicModule.forRoot(MyApp, {
+      preloadModules: true
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -2,7 +2,9 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Content } from 'ionic-angular';
 
-@IonicPage()
+@IonicPage({
+  priority: 'low'
+})
 @Component({
   selector: 'page-building',
   templateUrl: 'building.html',

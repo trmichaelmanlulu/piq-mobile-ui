@@ -3,11 +3,12 @@ declare var window;
 import { Observable, Subscription } from 'rxjs';
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
-// import { TabsPage } from "../tabs/tabs";
 import { BrandingProvider } from '../../providers/branding/branding';
 import { NotifyProvider } from './../../providers/notify/notify';
 
-@IonicPage()
+@IonicPage({
+  priority: 'high'
+})
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

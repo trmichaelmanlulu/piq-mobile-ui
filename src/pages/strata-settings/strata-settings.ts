@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
-@IonicPage()
+@IonicPage({
+  priority: 'off'
+})
 @Component({
   selector: 'page-strata-settings',
   templateUrl: 'strata-settings.html',

@@ -2,14 +2,9 @@ import { NotifyProvider } from './../../../providers/notify/notify';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController, Slides } from 'ionic-angular';
 
-/**
- * Generated class for the NewsfeedModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
+@IonicPage({
+  priority: 'off'
+})
 @Component({
   selector: 'page-newsfeed-modal',
   templateUrl: 'newsfeed-modal.html',

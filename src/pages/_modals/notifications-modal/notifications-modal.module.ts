@@ -10,9 +10,6 @@ import { NotificationsModalPage } from './notifications-modal';
   imports: [
     IonicPageModule.forChild(NotificationsModalPage),
     SharedCardsComponentsModule
-  ],
-  exports: [
-    NotificationsModalPage
   ]
 })
 export class NotificationsModalPageModule {}

@@ -10,9 +10,6 @@ import { NewsfeedModalPage } from './newsfeed-modal';
   imports: [
     IonicPageModule.forChild(NewsfeedModalPage),
     SharedCardsComponentsModule
-  ],
-  exports: [
-    NewsfeedModalPage
   ]
 })
 export class NewsfeedModalPageModule {}

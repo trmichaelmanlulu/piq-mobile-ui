@@ -3,7 +3,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { BrandingProvider } from '../../providers/branding/branding';
 
 @IonicPage({
-  name: 'TabsPage'
+  name: 'TabsPage',
+  priority: 'off'
 })
 @Component({
   selector: 'page-tabs',

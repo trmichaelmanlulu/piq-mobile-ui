@@ -8,9 +8,6 @@ import { FaqsModalPage } from './faqs-modal';
   ],
   imports: [
     IonicPageModule.forChild(FaqsModalPage),
-  ],
-  exports: [
-    FaqsModalPage
   ]
 })
 export class FaqsModalPageModule {}

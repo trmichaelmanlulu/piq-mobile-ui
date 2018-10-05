@@ -8,9 +8,6 @@ import { MyPropertiesModalPage } from './my-properties-modal';
   ],
   imports: [
     IonicPageModule.forChild(MyPropertiesModalPage),
-  ],
-  exports: [
-    MyPropertiesModalPage
   ]
 })
 export class MyPropertiesModalPageModule {}
