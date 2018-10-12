@@ -1,4 +1,4 @@
-import { NotifyProvider } from './../../../providers/notify/notify';
+import { ToastProvider } from './../../../providers/_controllers/toast/toast';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController, Slides } from 'ionic-angular';
 
@@ -16,13 +16,12 @@ export class NewsfeedModalPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    private viewCtrl: ViewController, 
-    private toastCtrl: ToastController,
-    private notifyProvider: NotifyProvider) {
+    private viewCtrl: ViewController,
+    private toastProvider: ToastProvider) {
   }
 
   ionViewDidEnter() {
-    this.notifyProvider.presentToast({message: 'Swipe left or right to view other pinned posts.', duration: 1500});
+    this.toastProvider.presentToast({message: 'Swipe left or right to view other pinned posts.', duration: 1500});
   }
 
   goToSlide() {
@@ -35,6 +34,6 @@ export class NewsfeedModalPage {
   }
 
   dismissModal() {
-      this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss();
   }
 }

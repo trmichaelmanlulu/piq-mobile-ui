@@ -1,6 +1,9 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Content } from 'ionic-angular';
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { GalleryModal } from 'ionic-gallery-modal';
 
 @IonicPage({
   priority: 'low'
@@ -14,10 +17,12 @@ export class BuildingPage {
   @ViewChild(Content) content: Content;
   @ViewChild('buildingNavbar') buildingNavbar: ElementRef;
   @ViewChild('buildingName') buildingName: ElementRef;
+  images = [{url: 'assets/imgs/building-background.jpeg'}, {url: 'assets/imgs/building-background.jpeg'}, {url: 'assets/imgs/building-background.jpeg'}, {url: 'assets/imgs/building-background.jpeg'}, {url: 'assets/imgs/building-background.jpeg'}];
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    private modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -43,6 +48,13 @@ export class BuildingPage {
   resetHeaderScrolled() {
     document.querySelector('.header-image').removeAttribute('style');
   }
-  
+
+  presentBuildingImagesModal(images, index) {
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: images,
+      initialSlide: index
+    });
+    modal.present();
+  }
 
 }

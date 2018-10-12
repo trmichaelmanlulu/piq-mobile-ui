@@ -15,7 +15,7 @@ import { BuildingPage } from './building';
     NavbarComponentModule,
     SharedTabsComponentsModule,
     BuildingComponentsModule,
-    ParallaxHeaderDirectiveModule
-  ],
+    ParallaxHeaderDirectiveModule,
+  ]
 })
 export class BuildingPageModule {}

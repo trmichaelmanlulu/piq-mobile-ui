@@ -20,21 +20,22 @@
     button:not([clear]):not([outline]):not([menuclose]):not([menutoggle]):not(.item-cover):not(.alert-radio):not(.alert-button) {
         background: $primary !important;
     }
-    button[clear] {
-        color: $primary !important;
+    ion-content {
+        button[clear] {
+            color: $primary !important;
+        }
     }
     button[outline] {
         color: $primary !important;
         border: 1px solid $primary !important;
     }
-
-    // Inputs
-    // Inputs
-    ion-item.item-input.input-has-focus .item-inner {
-        border-bottom-color: $primary;
-        box-shadow: inset 0 -1px 0 0 $primary;
+    // Gallery modal button
+    gallery-modal {
+        button:not([clear]):not([outline]):not([menuclose]):not([menutoggle]):not(.item-cover):not(.alert-radio):not(.alert-button) {
+            background: transparent !important;
+        }
     }
-
+    
     // Navbar
     .tabs .tab-button[aria-selected=true] .tab-button-icon {
         color: $primary;
@@ -133,6 +134,10 @@
         &::before {
             background: $gradient;
         }
+    }
+    .login-inputs.ng-valid, 
+    .login-inputs.ng-valid {
+        border-bottom: 1px solid $primary !important;
     }
 
     // ========================================================================

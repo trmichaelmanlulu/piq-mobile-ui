@@ -4,17 +4,9 @@
 
 <ion-content parallax-header #pageContent>
   <div id="header-slides">
-    <ion-slides class="header-image" autoplay pager>
-      <ion-slide>
-        <img src="assets/imgs/building-background.jpeg" alt="">
-      </ion-slide>
-  
-      <ion-slide>
-        <img src="assets/imgs/building-background.jpeg" alt="">
-      </ion-slide>
-  
-      <ion-slide>
-        <img src="assets/imgs/building-background.jpeg" alt="">
+    <ion-slides class="header-image image-slider" autoplay pager>
+      <ion-slide *ngFor="let img of images; let i = index">
+        <img [src]="img.url" class="thumb-img" (click)="presentBuildingImagesModal(images, i)">
       </ion-slide>
     </ion-slides>
   </div>

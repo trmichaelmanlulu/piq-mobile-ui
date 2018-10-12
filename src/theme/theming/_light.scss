@@ -29,7 +29,7 @@
             color: #828282;
         }
     }
-
+   
     // Hotdog
     .hotdog {
         background: $active-color;
@@ -39,6 +39,11 @@
     ._bg-shade-pseudo-before::before,
     ._bg-shade-pseudo-after::after {
         background: $active-color;
+    }
+
+    // Loading
+    .is-loading::before {
+        background: $white;
     }
 
     // ========================================================================
@@ -52,6 +57,13 @@
         }
         .main-content {
             background: $theme !important;
+        }
+    }
+
+    // Building Modal gallery
+    gallery-modal {
+        ion-content.content {
+            background: rgba(0, 0, 0, 0.85) !important;
         }
     }
 
@@ -88,6 +100,14 @@
         }
     }
 
+    // Login
+    page-login {
+        .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner { 
+            border-bottom-color: #dedede;
+            box-shadow: none;
+        }
+    }
+
     // ========================================================================
     // Components
     // ========================================================================
@@ -101,4 +121,4 @@
 }
 
 // Other elements for light theme are the same with default theme,
-// the only different is its 'body/content' background color
+// the only difference is its 'body/content' background color

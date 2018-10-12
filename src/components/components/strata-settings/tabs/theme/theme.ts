@@ -1,8 +1,9 @@
-import { NotifyProvider } from './../../../../../providers/notify/notify';
+
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { BrandingProvider } from '../../../../../providers/branding/branding';
-import { StrataApiProvider } from './../../../../../providers/strata-api/strata-api';
+import { BrandingProvider } from '../../../../../providers/_internal/branding/branding';
+import { StrataApiProvider } from './../../../../../providers/_api/strata-api/strata-api';
+import { ToastProvider } from './../../../../../providers/_controllers/toast/toast';
 
 @Component({
   selector: 'app-theme',
@@ -17,7 +18,7 @@ export class ThemeComponent {
     public navParams: NavParams,
     private brandingProvider: BrandingProvider,
     private apiProvider: StrataApiProvider,
-    private notifyProvider: NotifyProvider) {
+    private toastProvider: ToastProvider) {
   }
 
   ionViewDidLoad() {
@@ -55,11 +56,11 @@ export class ThemeComponent {
         this.brandingParams.primary.value = this.brandingProvider.primaryColor;
         this.brandingParams.bgColor.value = this.brandingProvider.backgroundColor;
         this.brandingProvider.setBranding(this.brandingParams);
-        this.notifyProvider.presentToast({message: 'Theme has been successfully saved.'});
+        this.toastProvider.presentToast({message: 'Theme has been successfully saved.'});
       }, error => {
         console.log('ERR: ', error);
         this.isBrandingChanged = false;
-        this.notifyProvider.presentToast({message: 'Saving theme has failed.'});
+        this.toastProvider.presentToast({message: 'Saving theme has failed.'});
       });
     }
   }

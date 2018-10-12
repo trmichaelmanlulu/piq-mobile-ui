@@ -76,6 +76,12 @@ app-sidemenu {
             height: 70vh;
             max-height: calc(100vh - 200px);
 
+            ion-item-group:last-child {
+                ion-item:last-child {
+                    margin-bottom: 4rem;
+                }
+            }
+
             ion-item {
                 padding-left: 2.25rem !important;
 

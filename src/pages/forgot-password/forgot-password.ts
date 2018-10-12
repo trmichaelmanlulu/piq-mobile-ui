@@ -9,22 +9,23 @@ import { AmplifyService } from 'aws-amplify-angular';
 import { LoginApiProvider } from './../../providers/_api/login-api/login-api';
 import { LoginProvider } from './../../providers/_pages/login-page/login/login';
 import { BuildingsApiProvider } from './../../providers/_api/buildings-api/buildings-api';
-import { PasswordValidator } from '../../utils/validators/password.validator';
-import { ErrorConverterPipe } from './../../pipes/error-converter/error-converter';
 import { BasicAlertProvider } from './../../providers/_controllers/basic-alert/basic-alert';
+import { PasswordValidator } from '../../utils/validators/password.validator';
 
 @IonicPage({
-  priority: 'high'
+  priority: 'off'
 })
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-forgot-password',
+  templateUrl: 'forgot-password.html',
 })
-export class LoginPage implements OnInit {
+export class ForgotPasswordPage implements OnInit {
 
   form: FormGroup;
   isLoading: boolean = false;
   isNewPasswordForm: boolean = false;
+  errorCode: string;
+  infoMessage: string;
 
   currentUser: any;
 
@@ -39,9 +40,8 @@ export class LoginPage implements OnInit {
     private loginApiProvider: LoginApiProvider,
     private loginProvider: LoginProvider,
     private buildingsApiProvider: BuildingsApiProvider,
-    private errorConverterPipe: ErrorConverterPipe,
     public navCtrl: NavController, 
-    public forgotCtrl: AlertController, 
+    public alertCtrl: AlertController, 
     public toastCtrl: ToastController, 
     public navParams: NavParams,
     private renderer: Renderer2,
@@ -52,109 +52,106 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.setBranding();
-    this.buildLoginForm();
+    this.buildForgotPasswordForm();
   }
 
   toggleLoading() {
     this.isLoading = !this.isLoading;
   }
 
-  toggleNewPasswordForm() {
+  toggleNewPasswordForm(email) {
+    this.buildNewPasswordForm(email);
     this.isNewPasswordForm = !this.isNewPasswordForm;
-   }
+  }
+
+  onCancel() {
+    if (!this.isNewPasswordForm) {
+      this.navCtrl.setRoot('LoginPage');
+    } else {
+      this.isNewPasswordForm = !this.isNewPasswordForm;
+    }
+  }
+
+  showHelper(type) {
+    let alert: any;
+    if (type == 'verification-code') {
+      this.basicAlertProvider.presentAlert({ 
+        title: 'Verification code', 
+        message: 'Enter the verification code that was sent in your email if you already received one.',
+        buttons: [{
+          text: 'Request code',
+            handler: () => {
+              this.isNewPasswordForm = !this.isNewPasswordForm;
+            }
+          },
+          'Ok'
+        ]
+      });
+    } else if (type == 'password') {
+      this.basicAlertProvider.presentAlert({
+        title: 'Password Details',
+        message: 'Password combination must contain atleast 8 characters, uppercase letter, lowercase letter, number and a special character.',
+        buttons: ['Ok']
+      });
+    }
+  }
 
   // ------------------------------------------------------------------------------------
-  // Login
+  // Forgot Password
   // ------------------------------------------------------------------------------------
 
-  buildLoginForm() {
+  buildForgotPasswordForm() {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      'email' : ['', [Validators.required, Validators.email]]
     })
   }
 
   onSubmit(form: FormGroup) {
     console.log('form: ', form);
-    if (form.valid) {
+    if (this.form.valid) {
       if (this.isNewPasswordForm) {
-        this.updatePassword(form);
+        this.initiateChangePassword();
       } else {
-        this.login(form);
+        this.initiateForgotPasswordRequest();
       }
     }
   }
 
-  updatePassword(form: FormGroup) {
-    if (form.valid) {
+  initiateChangePassword() {
+    console.log('initiateChangePassword!!');
+    this.toggleLoading();
+    const formValue = this.form.value;
+    this.amplifyService.auth().forgotPasswordSubmit(formValue.email, formValue.code, formValue.password).then(res => {
+      console.log('this success res', res);
+      this.forceSignin(formValue.email, formValue.password);
+    }, err => {
+      console.log('initiateChangePassword err: ', err);
+      if (err.message === 'User password cannot be reset in the current state.') {
+        this.errorCode = 'CANT_RESET_PASSWORD';
+      } else {
+        this.errorCode = err.code;
+        this.basicAlertProvider.presentAlert({ message: this.errorCode, errorType: true });
+      }
       this.toggleLoading();
-      const password = form.get('password').value;
-      this.amplifyService.auth().completeNewPassword(this.currentUser, password, {}).then(response => {
-        console.log('this response::', response);
-        this.forceSignin(response.username, password);
-      })
-      .catch(error => {
-        console.log('this error::', error);
-        this.toggleLoading();
-      });
-    }
+    });
   }
 
   forceSignin(username: string, password: string) {
+    console.log('forceSignin!!');
     this.amplifyService.auth().signIn(username, password).then(response => {
       this.proccessLogin(response);
     }, error => {
+      console.log('forceSignin error: ', error);
       if (error && error.code) {
-        this.basicAlertProvider.presentAlert({ message: error.code, errorType: true });
+        this.basicAlertProvider.presentAlert({ message: this.errorCode, errorType: true });
       }
       console.log('error response::', error);
       this.toggleLoading();
     });
   }
 
-  login (form: FormGroup) {
-    console.log('logging in!!');
-    const formValue = form.value;
-    console.log('this farm value::', formValue);
-    this.toggleLoading();
-    this.amplifyService.auth().signIn(formValue.email, formValue.password).then(response => {
-      console.log('this response::', response);
-      this.setCurrentUser(response);
-      this.handleUserChallenge(response, form);
-      this.navCtrl.setRoot('TabsPage');
-      localStorage.setItem('loggedIn', 'true');
-    }).catch(errorResponse => {
-      if (errorResponse && errorResponse.code) {
-        this.basicAlertProvider.presentAlert({ message: errorResponse.code, errorType: true });
-        this.toggleLoading();
-      }
-      console.log('error response::', errorResponse);
-    });
-  }
-
-  handleUserChallenge(authResponse: any, form: FormGroup) {
-    if (authResponse && authResponse.challengeName === 'NEW_PASSWORD_REQUIRED') {
-      this.startNewPasswordChallenge(authResponse.challengeName);
-    } else {
-      this.proccessLogin(authResponse, form);
-    }
-  }
-
-  startNewPasswordChallenge(challengeName: string) {
-    this.basicAlertProvider.presentAlert({ message: challengeName, errorType: true });
-    this.toggleNewPasswordForm();
-    this.buildNewPasswordForm();
-    this.toggleLoading();
-  }
-
-  buildNewPasswordForm() {
-    this.form = this.fb.group({
-      'password': ['', [Validators.required, PasswordValidator.correctPattern]],
-      'confirmPassword': ['', Validators.required]
-    }, {validator: PasswordValidator.matchPassword});
-  }
-
   proccessLogin(authResponse: any, form?: FormGroup) {
+    console.log('proccessLogin!!');
     let strataId = 1;
     localStorage.setItem('buildingId', '55');
     // lot Ids for 55
@@ -168,8 +165,47 @@ export class LoginPage implements OnInit {
     this.getBranding(strataId);
     console.log('this auth response::', authResponse);
     if (authResponse) {
+      console.log('proccessLogin authResponse', authResponse);
       const userId = authResponse.username;
       this.getUserInfo(userId);
+    }
+
+  }
+
+  initiateForgotPasswordRequest() {
+    this.toggleLoading();
+    console.log('form submitted!!', this.form.value);
+    const email = this.form.value.email;
+    this.amplifyService.auth().forgotPassword(email).then(res => {
+      console.log('res', res);
+      this.infoMessage = 'Please check your email for your verification code.';
+      this.basicAlertProvider.presentAlert({ message: this.infoMessage });
+      this.toggleNewPasswordForm(email);
+      this.toggleLoading();
+    }, err => {
+      console.log('err', err);
+      if (err.message === 'User password cannot be reset in the current state.') {
+        this.errorCode = 'CANT_RESET_PASSWORD';
+      } else if (err.message === 'User is disabled') {
+        this.errorCode = 'CANT_RESET_PASSWORD';
+      } else {
+        this.errorCode = err.code;
+      }
+      this.basicAlertProvider.presentAlert({ message: this.errorCode, errorType: true });
+      this.toggleLoading();
+    });
+  }
+
+  buildNewPasswordForm(email) {
+    this.form = this.fb.group({
+      'email' : ['', [Validators.required, Validators.email]],
+      'code': ['', Validators.required],
+      'password': ['', [Validators.required, PasswordValidator.correctPattern]],
+      'confirmPassword': ['', [Validators.required, PasswordValidator.correctPattern]]
+    }, {validator: PasswordValidator.matchPassword});
+
+    if (email) {
+      this.form.get('email').setValue(email ? email : '');
     }
   }
 
@@ -205,15 +241,6 @@ export class LoginPage implements OnInit {
     });
   }
 
-  setCurrentUser(user: any) {
-    this.currentUser = user;
-  }
-
-  forgotPassword() {
-    this.navCtrl.push('ForgotPasswordPage');
-  }
-
-
   // ------------------------------------------------------------------------------------
   // Branding
   // ------------------------------------------------------------------------------------
@@ -237,7 +264,6 @@ export class LoginPage implements OnInit {
       this.brandingProvider.setPrimaryColor('p-default');
     }
   }
-
 
 
   // ------------------------------------------------------------------------------------

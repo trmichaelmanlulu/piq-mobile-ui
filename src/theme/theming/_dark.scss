@@ -49,6 +49,17 @@
     input {
         background: $drk-input-color !important;
     }
+    // Inputs
+    .item-input {
+        border-bottom-color: lighten($drk-card-line-color, 15%) !important;
+
+        &.input-has-focus,
+        &.ng-valid.item-input-has-value  {
+            .item-inner {
+                border-bottom-color: lighten($drk-card-line-color, 15%) !important;
+            }
+        }
+    }
 
     // Item
     ion-item {
@@ -144,6 +155,10 @@
     ion-alert .alert-wrapper {
         background: $drk-card-color;
 
+        .alert-message {
+            color: $text-color;
+        }
+
         .alert-radio-group {
             border-top: 1px solid $drk-card-line-color;
             border-bottom: 1px solid $drk-card-line-color;
@@ -166,6 +181,13 @@
         }
     }
 
+    // Popovers
+    ion-popover {
+        .item-inner {
+            border-bottom: 1px solid $drk-card-line-color;
+        }
+    }
+
     // Hotdog
     .hotdog {
         background: $drk-bg-hotdog;
@@ -175,6 +197,11 @@
     ._bg-shade-pseudo-before::before,
     ._bg-shade-pseudo-after::after {
         background: $theme;
+    }
+
+    // Loading
+    .is-loading::before {
+        background: $drk-card-color;
     }
 
     // ========================================================================
@@ -209,6 +236,13 @@
         }
         .main-content {
             background: $theme !important;
+        }
+    }
+
+    // Building Modal gallery
+    gallery-modal {
+        ion-content.content {
+            background: rgba(0, 0, 0, 0.85) !important;
         }
     }
 
@@ -291,7 +325,8 @@
     }
 
     // Login
-    page-login {
+    page-login,
+    page-forgot-password {
         .login-body {
             background: $drk-card-color;
             
@@ -302,6 +337,12 @@
                     background: transparent !important;
                 }
             }
+            .login-inputs {
+                border-bottom: 1px solid $drk-card-line-color;
+            }
+        }
+        .lf-signup {
+            color: $heading-color !important;
         }
     }
 

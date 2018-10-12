@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { environment as env } from '../../environments/environment';
+import { environment as env } from '../../../environments/environment';
 
 @Injectable()
 export abstract class AppApiProvider {

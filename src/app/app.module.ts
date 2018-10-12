@@ -16,9 +16,28 @@ import { MyApp } from './app.component';
 import { SidemenuComponentModule } from './../components/shared/sidemenu/sidemenu.module';
 
 // Providers
-import { BrandingProvider } from '../providers/branding/branding';
-import { NotifyProvider } from './../providers/notify/notify';
-import { StrataApiProvider } from './../providers/strata-api/strata-api';
+//-- API
+import { StrataApiProvider } from './../providers/_api/strata-api/strata-api';
+import { LoginApiProvider } from '../providers/_api/login-api/login-api';
+import { BuildingsApiProvider } from '../providers/_api/buildings-api/buildings-api';
+
+//-- Internal
+import { BrandingProvider } from '../providers/_internal/branding/branding';
+
+//-- Controllers
+import { BasicAlertProvider } from '../providers/_controllers/basic-alert/basic-alert';
+import { ToastProvider } from '../providers/_controllers/toast/toast';
+
+//-- Pages
+import { LoginProvider } from '../providers/_pages/login-page/login/login';
+
+// Pipes
+import { ErrorConverterPipe } from './../pipes/error-converter/error-converter';
+
+// Vendors
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 
 @NgModule({
   declarations: [
@@ -29,6 +48,8 @@ import { StrataApiProvider } from './../providers/strata-api/strata-api';
     BrowserModule,
 
     SidemenuComponentModule,
+    ionicGalleryModal.GalleryModalModule,
+    AmplifyAngularModule,
 
     IonicModule.forRoot(MyApp, {
       preloadModules: true
@@ -43,11 +64,21 @@ import { StrataApiProvider } from './../providers/strata-api/strata-api';
     SplashScreen,
     Keyboard,
 
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: HAMMER_GESTURE_CONFIG, useClass: ionicGalleryModal.GalleryModalHammerConfig },
+
+    StrataApiProvider,
+    LoginApiProvider,
+    BuildingsApiProvider,
 
     BrandingProvider,
-    NotifyProvider,
-    StrataApiProvider
+
+    BasicAlertProvider,
+    ToastProvider,
+
+    LoginProvider,
+    AmplifyService,
+    ErrorConverterPipe,
   ]
 })
 export class AppModule {}

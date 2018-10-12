@@ -1,6 +1,6 @@
 import { Component, Renderer2 } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { BrandingProvider } from '../../providers/branding/branding';
+import { BrandingProvider } from '../../providers/_internal/branding/branding';
 
 @IonicPage({
   name: 'TabsPage',
